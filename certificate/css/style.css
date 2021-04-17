@@ -20,6 +20,7 @@ body {
 .thumb img {
     display: inline-block;
     vertical-align: middle;
+    widt: 575px; 
     margin: 10px 10px 10px 10px;
     box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1);
 }
