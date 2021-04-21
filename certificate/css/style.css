@@ -28,6 +28,7 @@ body {
 /* картинка на странице */
 .minimized {
     width: 575px;
+    vertical-align: middle;
     cursor: pointer;
   }
   .minimized:hover {
