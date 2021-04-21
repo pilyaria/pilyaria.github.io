@@ -142,6 +142,13 @@ body {
     color: black;
 }
 
+.my-work-site{
+    font-style: normal;
+    font-weight: normal;
+    line-height: 24px;
+    color: #595959;
+}
+
 .my-work-expierence-duties{
     padding: 0 0 0 18px;
 }
