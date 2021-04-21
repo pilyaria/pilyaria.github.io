@@ -32,7 +32,7 @@ body {
 .minimized {
     /* width: 570px; */
     display: table-cell;
-    width: 45%;
+    width: 40%;
     cursor: pointer;
   }
   .minimized:hover {
