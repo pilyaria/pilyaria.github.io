@@ -32,7 +32,7 @@ body {
 .minimized {
     /* width: 570px; */
     display: table-cell;
-    width: 47%;
+    width: 45%;
     cursor: pointer;
     margin-bottom: 10px;
   }
