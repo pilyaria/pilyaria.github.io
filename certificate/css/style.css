@@ -9,7 +9,8 @@ body {
     justify-content: center;
     display: flex;
     flex-direction: row-reverse;
-    width: 1200px;
+    /* width: 1200px; */
+    width: 80%;
     background-color: #fff;
     margin: 40px auto;
     box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
@@ -29,8 +30,11 @@ body {
 
 /* картинка на странице */
 .minimized {
-    width: 570px;
+    /* width: 570px; */
+    display: table-cell;
+    width: 47%;
     cursor: pointer;
+    margin-bottom: 10px;
   }
   .minimized:hover {
     box-shadow: 0px 0px 20px rgb(2, 230, 21);
