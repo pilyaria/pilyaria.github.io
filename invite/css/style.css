@@ -1,0 +1,346 @@
+body {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    width: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background-color: #ffffff;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 1200px;
+    background-color: #fff;
+    margin: 40px auto;
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+.t-records ol,
+.t-records ul {
+    padding-left: 20px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+.ExternalClass {
+    width: 100%;
+  }
+  img {
+    border: 0 none;
+    height: auto;
+    line-height: 100%;
+    outline: none;
+    text-decoration: none;
+    -ms-interpolation-mode: bicubic;
+  }
+  a img {
+    border: 0 none;
+  }
+
+  #outlook a {
+    padding: 0;
+  }
+  #allrecords {
+    height: 100% !important;
+    margin: 0;
+    padding: 0;
+    width: 100% !important;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.45;
+  }
+  #allrecords td {
+    margin: 0;
+    padding: 0;
+  }
+  #allrecords ul {
+    -webkit-padding-start: 30px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .r {
+      width: 100% !important;
+      min-width: 400px !important;
+    }
+  }
+  @media only screen and (max-width: 480px) {
+    .t-emailBlock {
+      display: block !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      width: 100% !important;
+    }
+    .t-emailBlockPadding {
+      padding-top: 15px !important;
+    }
+    .t-emailBlockPadding30 {
+      padding-top: 30px !important;
+    }
+    .t-emailAlignLeft {
+      text-align: left !important;
+      margin-left: 0 !important;
+    }
+    .t-emailAlignCenter {
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
+
+.allrectable {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.tdheadinvite{
+    padding-left: 15px;
+    padding-right: 15px;
+    background: url(img/invite.jpg)
+    no-repeat top center / auto auto;
+    /* background-color: #ffffff; */
+}
+
+.tableheadinvite{
+    margin: 0 auto;
+    border-spacing: 0;
+    width: 600px;
+    text-align: center;
+}
+
+.headdiv{
+    margin: 0 auto;
+    font-weight: normal;
+    font-family: Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+    color: #ffffff;
+    font-size: 42px;
+    line-height: 1.3;
+}
+
+.tddiscription{
+    text-align: center;
+    padding: 0 0 10px
+}
+
+.divdiscription{
+    margin: 0 auto;
+    font-weight: normal;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    font-size: 21px;
+    line-height: 1.4; 
+}
+
+.tdrequest{
+    padding: 20px 0 0
+}
+
+.tablerequest{
+    margin: 0 auto 
+}
+
+.requestbtn{
+    display: table-cell;
+    text-decoration: none;
+    padding: 17px 36px;
+    font-size: 17px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    width: 100%;
+    color: #2e3f7f;
+    border: 0px solid;
+    background-color: #ffac38;
+    border-radius: 10px;
+}
+
+.tabrecmail{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0;
+    border: 0;
+}
+
+
+.tablerecmail{
+    margin: 0 auto;
+    background-color: #fcfcfc;
+    border-spacing: 0;
+    width: 600px;
+}
+
+.tablerecmail-white{
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-spacing: 0;
+  width: 600px;
+}
+
+.table-without-back{
+  margin: 0 auto;
+  border-spacing: 0;
+  width: 600px
+}
+
+.imgnotebook{
+  display: block;
+  width: 100%
+}
+
+/* Блок структуры ИС */
+.structuretitle{
+  margin: 0 auto;
+  font-weight: normal;
+  font-family: Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  color: #444444;
+  font-size: 26px;
+  line-height: 1.3;
+  max-width: 400px;
+}
+
+.structureISdiscr{
+  margin: 0 auto;
+  font-weight: normal;
+  font-family: Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  color: #7a7a7a;
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: 450px;
+}
+
+.demobtn{
+  display: table-cell;
+  text-decoration: none;
+  padding: 15px 30px;
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+  font-family: Helvetica Neue, Helvetica,
+    Arial, sans-serif;
+  width: 100%;
+  color: #ffffff;
+  background-color: #2e3f7f;
+  border-radius: 10px;
+}
+
+/* Блок под логотипом */
+.discriptionTitle{
+  margin: 0 auto;
+  font-family: Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  color: #444444;
+  font-size: 20px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.discriptionItemLogo{
+  display: block;
+  width: 100%
+}
+.discriptionItem{
+  font-weight: normal;
+  font-family: Helvetica Neue, Helvetica,
+    Arial, sans-serif;
+  color: #222222;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+/* Блок Основные виды услуг */
+.servicesTitle{
+  margin: 0 auto;
+  font-family: Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  color: #222222;
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Блок Общей информации */
+.generalInfoTitle{
+  font-weight: normal;
+  font-family: Helvetica Neue, Helvetica,
+    Arial, sans-serif;
+  color: #222222;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.generalInfoDiscr{
+  font-weight: normal;
+  font-family: Helvetica Neue, Helvetica,
+    Arial, sans-serif;
+  color: #777777;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Блок Тарифы */
+.tariffImg{
+  display: block;
+  width: 100% !important
+}
+
+.tariffTitle{
+  font-weight: normal;
+  font-family: Helvetica Neue, Helvetica,
+    Arial, sans-serif;
+  color: #222222;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.tariffDiscr{
+  font-weight: normal;
+  font-family: Helvetica Neue, Helvetica,
+    Arial, sans-serif;
+  color: #777777;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.tariffPrice{
+  display: table-cell;
+  text-decoration: none;
+  padding: 6px 12px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+  font-family: Helvetica Neue,
+    Helvetica, Arial, sans-serif;
+  width: 100%;
+  /* color: ; */
+}
+
+/* Блок Подвал */
+.footerTitle{
+  margin: 0 auto;
+  font-weight: normal;
+  font-family: Helvetica Neue, Helvetica,
+    Arial, sans-serif;
+  color: #222222;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.footerQuestions{
+  margin: 0 auto;
+  font-weight: normal;
+  font-family: Helvetica Neue, Helvetica,
+    Arial, sans-serif;
+  color: #a1a1a1;
+  font-size: 14px;
+}
+
+.hrefColor{
+  color: #327dd0 !important
+}
