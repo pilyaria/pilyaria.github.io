@@ -30,18 +30,6 @@ body {
 /* About me section */
 .about-me-section{
     margin-bottom: 0 0 40px 0;
-    /* background: rgb(240, 240, 140);
-    display: flex;
-    flex-direction: column;  */
-    /* padding-left: 20px;
-    padding-top: 30px;
-    padding: 10px 20px 30px 40px; */
-
-    /* margin-bottom: 50px;
-    margin-top: 50px;
-    margin-left: 50px;
-    margin-right: 50px; */
-    /* margin: 20px 50px 100px 150px; */
 }
 
 .about-me-profession{
@@ -73,6 +61,7 @@ body {
 /* My project section*/
 .my-projects-section{
     margin: 0 0 50px 0;
+    width:  500px;
 
 }
 
