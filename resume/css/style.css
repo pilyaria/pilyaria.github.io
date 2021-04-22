@@ -16,6 +16,7 @@ body {
 /* Main content section */
 .main-content-section{
     padding: 100px 90px;
+    width:  700px;
 }
 
 .main-content-title{
@@ -61,7 +62,6 @@ body {
 /* My project section*/
 .my-projects-section{
     margin: 0 0 50px 0;
-    width:  650px;
 
 }
 
