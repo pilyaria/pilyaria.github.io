@@ -44,10 +44,11 @@ table{
 .minimized {
     /* width: 570px; */
     display: table-cell;
-    width: 95%;
+    width: 100%;
     cursor: pointer;
     margin-bottom: 10px;
     vertical-align: middle;
+    align:center;
     /* margin: 20px 20px 20px 20px; */
     box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
   }
