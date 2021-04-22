@@ -33,15 +33,15 @@ body {
 
 table{
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
   border-spacing: 0;
   margin: 10px 10px 10px 10px;
   border: 0;
   align:center;
 }
 
-td{
-    border: 5px;
+td, th, tr {
+    border: 10px;
 }
 
 /* картинка на странице */
