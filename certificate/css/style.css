@@ -31,12 +31,13 @@ body {
     box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-.table{
+table{
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
   margin: 10px 10px 10px 10px;
   border: 0;
+  align:center;
 }
 
 /* картинка на странице */
