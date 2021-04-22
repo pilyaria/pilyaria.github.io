@@ -62,7 +62,7 @@ body {
 /* My project section*/
 .my-projects-section{
     margin: 0 0 50px 0;
-
+    width:  700px;
 }
 
 .my-projects-list{
