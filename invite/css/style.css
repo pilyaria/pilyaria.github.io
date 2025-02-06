@@ -6,7 +6,7 @@ body {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     background-color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .main-container{
@@ -269,8 +269,8 @@ body {
 /* Блок Общей информации */
 .generalInfoTitle{
   font-weight: normal;
-  font-family: Helvetica Neue, Helvetica,
-    Arial, sans-serif;
+  /* font-family: Helvetica Neue, Helvetica,
+    Arial, sans-serif; */
   color: #222222;
   font-size: 20px;
   line-height: 1.2;
@@ -278,8 +278,8 @@ body {
 
 .generalInfoDiscr{
   font-weight: normal;
-  font-family: Helvetica Neue, Helvetica,
-    Arial, sans-serif;
+  /* font-family: Helvetica Neue, Helvetica,
+    Arial, sans-serif; */
   color: #777777;
   font-size: 14px;
   line-height: 1.4;
@@ -293,8 +293,8 @@ body {
 
 .tariffTitle{
   font-weight: normal;
-  font-family: Helvetica Neue, Helvetica,
-    Arial, sans-serif;
+  /* font-family: Helvetica Neue, Helvetica,
+    Arial, sans-serif; */
   color: #222222;
   font-size: 20px;
   line-height: 1.2;
@@ -302,8 +302,8 @@ body {
 
 .tariffDiscr{
   font-weight: normal;
-  font-family: Helvetica Neue, Helvetica,
-    Arial, sans-serif;
+  /* font-family: Helvetica Neue, Helvetica,
+    Arial, sans-serif; */
   color: #777777;
   font-size: 14px;
   line-height: 1.4;
@@ -316,8 +316,8 @@ body {
   font-size: 14px;
   text-align: center;
   font-weight: bold;
-  font-family: Helvetica Neue,
-    Helvetica, Arial, sans-serif;
+  /* font-family: Helvetica Neue,
+    Helvetica, Arial, sans-serif; */
   width: 100%;
   /* color: ; */
 }
@@ -326,8 +326,8 @@ body {
 .footerTitle{
   margin: 0 auto;
   font-weight: normal;
-  font-family: Helvetica Neue, Helvetica,
-    Arial, sans-serif;
+  /* font-family: Helvetica Neue, Helvetica,
+    Arial, sans-serif; */
   color: #222222;
   font-size: 16px;
   line-height: 1.5;
@@ -336,8 +336,8 @@ body {
 .footerQuestions{
   margin: 0 auto;
   font-weight: normal;
-  font-family: Helvetica Neue, Helvetica,
-    Arial, sans-serif;
+  /*font-family: Helvetica Neue, Helvetica,
+    Arial, sans-serif; */
   color: #a1a1a1;
   font-size: 14px;
 }
