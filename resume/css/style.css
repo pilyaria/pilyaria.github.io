@@ -259,7 +259,7 @@ body {
       rgba(255, 255, 255, 0),
       rgb(255, 255, 255)90%);
     width: 100%;
-    height: 60px;
+    height: 80px;
     opacity: 1;
     transition: 0.3s;
   }
@@ -275,9 +275,13 @@ body {
     transition: 0.3s;
   }
   .read-more-checker ~ .read-more-button:before {
+    font-size: 14px;
+    text-align: right;
     content: "Развернуть »";
   }
   .read-more-checker:checked ~ .read-more-button:before {
+    font-size: 14px;
+    text-align: right;
     content: "Свернуть «";
   }
   .read-more-button {
