@@ -252,7 +252,7 @@ body {
     position: relative;
   }
   .limiter .bottom {
-    position: sticky; /* Если прыгает - можно попробовать absolute */
+    position: absolute; /* Если прыгает - можно попробовать sticky */
     bottom: 0;
     background: linear-gradient(
       to bottom,
@@ -284,6 +284,9 @@ body {
     cursor: pointer;
     display: inline-block;
     color: #FB6D3A;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
     text-decoration: underline;
   }
 
