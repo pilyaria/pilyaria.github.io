@@ -275,19 +275,17 @@ body {
     transition: 0.3s;
   }
   .read-more-checker ~ .read-more-button:before {
-    font-size: 14px;
-    text-align: right;
     content: "Развернуть »";
   }
   .read-more-checker:checked ~ .read-more-button:before {
-    font-size: 14px;
-    text-align: right;
     content: "Свернуть «";
   }
   .read-more-button {
     cursor: pointer;
     display: inline-block;
     color: #FB6D3A;
+    font-size: 14px;
+    text-align: right;
     text-decoration: underline;
   }
 
