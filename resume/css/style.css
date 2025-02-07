@@ -247,7 +247,7 @@ body {
 
 /* Стили для текстового поля с кнопкой "Далее" */
 .limiter {
-    max-height: 180px;
+    max-height: 400px;
     overflow: hidden;
     position: relative;
   }
@@ -326,8 +326,8 @@ body {
     display: inline-block;
     padding: 10px;
     color: #FB6D3A;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    /* border: 1px solid #ddd;
+    border-radius: 4px; */
     text-decoration: underline;
 }
 
@@ -336,5 +336,5 @@ body {
 }
 
 .read-more-checker-exp:checked ~ .read-more-button-exp::after {
-    content: "Свернуть »";
+    content: "Свернуть «";
 }
