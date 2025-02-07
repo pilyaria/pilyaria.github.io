@@ -307,3 +307,34 @@ body {
     transition: 0.3s;
 }
 
+.read-more-checker-exp{
+    opacity: 0;
+    position: absolute;
+}
+
+.read-more-checker-exp:checked ~ .limited {
+    max-height: none;
+}
+
+.read-more-checker-exp:checked ~ .limited .bottom_lim{
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.read-more-button-exp{
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+    color: #FB6D3A;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: underline;
+}
+
+.read-more-checker-exp ~ .read-more-button-exp::after {
+    content: "Развернуть »";
+}
+
+.read-more-checker-exp:checked ~ .read-more-button-exp::after {
+    content: "Свернуть »";
+}
