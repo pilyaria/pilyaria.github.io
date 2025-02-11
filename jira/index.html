@@ -1,157 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    <title>JIRA Projects</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="shortcut icon" href="img/jira_icon.ico" />
-    <link rel="stylesheet" href="css/style.css">
-    <link 
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" 
-      rel="stylesheet" 
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="moz-extension://1ce47405-a7d6-4128-9ce4-e9cb0c9bc1f3/assets/prompt.js"></script>
+  <meta charset="UTF-8">
+  <title>Mailing</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900" rel="stylesheet"> <link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="css/img/jira_icon.ico" />
+
 </head>
 <body>
-
-    <!--Раздел с слайдами-->
-    <div class="container">
-        <input type="radio" name="slider" id="item-1" checked>
-        <input type="radio" name="slider" id="item-2">
-        <input type="radio" name="slider" id="item-3">
-    <div class="cards">
-        <label class="card" for="item-1" id="song-1">
-        <img 
-            class="minimized"
-            src="img/jira_1.png" alt="song"
-        >
-        </label>
-        <label class="card" for="item-2" id="song-2">
-        <img src="img/jira_2.png" alt="song">
-        </label>
-        <label class="card" for="item-3" id="song-3">
-        <img src="img/jira_3.png" alt="song">
-        </label>
+<!-- partial:index.partial.html -->
+<div class="slide active">
+  <div class="card1">
+    <div class="card__img1" id="img01"> </div>
+    <div class="card__content1"> 
+      <h2 class="card__content-header">Индивидуальные рабочие доски</h2>
     </div>
-    <div class="player">
-        <div class="upper-part">
-        <div class="play-icon">
-            <svg width="20" height="20" fill="#2992dc" stroke="#2992dc" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-play" viewBox="0 0 24 24">
-            <defs/>
-            <path d="M5 3l14 9-14 9V3z"/>
-            </svg>
-        </div>
-        <div class="info-area" id="test">
-            <label class="song-info" id="song-info-1">
-            <div class="title">Bunker</div>
-            <div class="sub-line">
-                <div class="subtitle">Balthazar</div>
-                <div class="time">4.05</div>
-            </div>
-            </label>
-            <label class="song-info" id="song-info-2">
-            <div class="title">Words Remain</div>
-            <div class="sub-line">
-                <div class="subtitle">Moderator</div>
-                <div class="time">4.05</div>
-            </div>
-            </label>
-            <label class="song-info" id="song-info-3">
-            <div class="title">Falling Out</div>
-            <div class="sub-line">
-                <div class="subtitle">Otzeki</div>
-                <div class="time">4.05</div>
-            </div>
-            </label>
-        </div>
-        </div>
-        <div class="progress-bar">
-        <span class="progress"></span>
-        </div>
+  </div>
+</div>
+<div class="slide">  
+  <div class="card1">
+    <div class="card__img1" id="img02"></div>
+    <div class="card__content1"> 
+      <h2 class="card__content-header">Фильтр задач в проверке по нескольким проектам</h2>
     </div>
+  </div>
+</div>
+<div class="slide">  
+  <div class="card1">
+    <div class="card__img1" id="img03"></div>
+    <div class="card__content1"> 
+      <h2 class="card__content-header">Фильтр по нескольким проектам</h2>
     </div>
+  </div>
+</div>
+<div class="slide">  
+  <div class="card1">
+    <div class="card__img1" id="img04"></div>
+    <div class="card__content1"> 
+      <h2 class="card__content-header">Описание задачи</h2>
+    </div>
+  </div>
+</div>
+<div class="prevnext">
+  <button class="prevnext-button" id="prev"></button>
+  <button class="prevnext-button" id="next"> </button>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js'></script><script  src="js/script.js"></script>
 
-    <!--
-    <div class="main-container"> -->
-        
-
-        <!-- Раздел с сертификатами -->
-       <!--  
-       <table align=center>
-            <thead>
-                <tr>
-                    <td colspan="2">
-                        <div>
-                        <strong>
-                            <h1>В разделе представлены мои сертификаты.<br />Для просмотра нажмите на изображение.</h1>
-                        </strong>
-                        
-                        </div>
-                        
-                    </td>
-                </tr>
-            </thead>
-            <tbody class="table">
-                <tr>
-                    <td>
-                        <img 
-                            class="minimized" 
-                            src="img/Сертификат Организация сервис-деск с помощью Jira Service Desk cloud Пиляр Ирина Александровна.jpg" 
-                            alt="Организация сервис-деск с помощью Jira Service Desk cloud"
-                            title="Организация сервис-деск с помощью Jira Service Desk cloud"
-                        >
-                    </td>
-                    <td>
-                        <img 
-                            class="minimized"
-                            src="img/Sertifikat_marafon1.jpg"
-                            alt="Основы web-дизайна в Adobe Photoshop"
-                            title="Основы web-дизайна в Adobe Photoshop"
-                        >
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img
-                            class="minimized"
-                            src="img/IMG_20210406_145228_024.png"
-                            alt="GoIT English HTML"
-                            title="GoIT English HTML"
-                        >
-                    </td>
-                    <td>
-                        <img 
-                            class="minimized"
-                            src="img/Certificate -Технические навыки профессионала.png"
-                            alt="Технические навыки профессионала"
-                            title="Технические навыки профессионала"
-                        >
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img
-                            class="minimized"
-                            src="img/Пиляр.png"
-                            alt="Технический специалист онлайн-проекта"
-                            title="Технический специалист онлайн-проекта"
-                        >
-                    </td>
-                    <td>
-                        <img
-                            class="minimized"
-                            src="img/Ирина Пиляр.png"
-                            alt="Сайты с нуля"
-                            title="Сайты с нуля"
-                        >
-                    </td>
-                </tr>
-            </tbody>
-        </table>      
-    </div> -->
-    <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
