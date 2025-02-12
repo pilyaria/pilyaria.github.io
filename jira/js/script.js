@@ -87,3 +87,56 @@ $slideNavPrev.click(function (e) {
 
   goToPreviousSlide(slideOut, slideIn, slideInAll);
 });
+
+
+$(function () {
+  $(".card__img").click(function () {
+    var bgImage = $(this).css("background-image"); // Получаем background-image
+    var imageUrl = bgImage.replace(/url\((['"])?(.*?)\1\)/gi, "$2").split(",")[0]; // Извлекаем URL
+
+    if (imageUrl) {
+      $("body").append(`
+        <div id="overlay"></div>
+        <div id="magnify">
+          <img src="${imageUrl}">
+          <div id="close-popup"><i></i></div>
+        </div>
+      `);
+      $("#magnify").css({
+        left: ($(document).width() - $("#magnify").outerWidth()) / 2,
+        top: ($(window).height() - $("#magnify").outerHeight()) / 2
+      });
+      $("#overlay, #magnify").fadeIn("fast");
+    }
+  });
+
+  $("body").on("click", "#close-popup, #overlay", function (event) {
+    event.preventDefault();
+    $("#overlay, #magnify").fadeOut("fast", function () {
+      $("#close-popup, #magnify, #overlay").remove();
+    });
+  });
+});
+
+/*
+$(function(){
+  $('.card__img').click(function(event) {
+    var i_path = $(this).attr('src');
+    $('body').append('<div id="overlay"></div><div id="magnify"><img src="'+i_path+'"><div id="close-popup"><i></i></div></div>');
+    $('#magnify').css({
+     left: ($(document).width() - $('#magnify').outerWidth())/2,
+     // top: ($(document).height() - $('#magnify').outerHeight())/2 upd: 24.10.2016
+            top: ($(window).height() - $('#magnify').outerHeight())/2
+   });
+    $('#overlay, #magnify').fadeIn('fast');
+  });
+  
+  $('body').on('click', '#close-popup, #overlay', function(event) {
+    event.preventDefault();
+
+    $('#overlay, #magnify').fadeOut('fast', function() {
+      $('#close-popup, #magnify, #overlay').remove();
+    });
+  });
+});
+*/
