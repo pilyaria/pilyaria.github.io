@@ -81,6 +81,22 @@ body {
     line-height: 24px;
     color: #595959;
     margin-left: 5px;
+    display: inline;
+}
+
+/* По умолчанию показываем только десктопный вариант */
+.my-projects-mobile {
+    display: none;
+}
+
+/* На мобильных скрываем десктопную версию и показываем мобильную */
+@media (max-width: 768px) {
+    .my-projects-desktop {
+        display: none !important;
+    }
+    .my-projects-mobile {
+        display: inline !important;
+    }
 }
 
 .my-projects-link{
