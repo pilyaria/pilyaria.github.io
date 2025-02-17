@@ -68,7 +68,7 @@ td, th, tr {
 /* Иконка лупы на карточке */
 .magnifier-icon {
   position: absolute;
-  top: 10px;
+  bottom: 10px;
   right: 10px;
   font-size: 24px;
   color: rgba(255, 255, 255, 0.7);
