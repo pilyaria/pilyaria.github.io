@@ -64,6 +64,21 @@ td, th, tr {
 #magnify img {
   width: 100%;
 }
+
+/* Иконка лупы на карточке */
+.magnifier-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.card:hover .magnifier-icon {
+  color: rgba(255, 255, 255, 1);
+}
 /* затемняющий фон */
 #overlay {
   display: none;
@@ -129,8 +144,53 @@ input[type=radio] {
   left: 0;
   right: 0;
   margin: auto;
-  transition: transform .4s ease;
+  transition: transform .4s ease, box-shadow .3s ease;
   cursor: pointer;
+}
+
+.card.zoomed {
+  transform: scale(1.2);
+  z-index: 2;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card .zoom-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.card .zoom-icon::before {
+  content: "🔍"; /* Иконка лупы */
+  color: white;
+  font-size: 18px;
+}
+
+.card:hover .zoom-icon {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Увеличение изображения */
+.card.minimized {
+  transform: scale(1.2);
+  z-index: 2;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Отключаем увеличение на мобильных */
+@media (max-width: 768px) {
+  .card.minimized {
+      transform: none;
+  }
 }
 
 .container {
