@@ -48,13 +48,34 @@ body {
   transform-origin: center center;
 }
 
-@media (max-width: 960px) {
+@media (max-width: calc(var(--baseline) * 80)) {
   .cover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(var(--baseline) * 80);
+    height: calc(var(--baseline) * 55);
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
     transform: translate(-50%, -50%) scale(calc(100vw / (var(--baseline) * 80)));
-    transform-origin: center center;
+    transform-origin: top left;
   }
 }
 
+@media (max-width: 768px) {
+  /* Переставляем элементы в колонку */
+  .book {
+    display: block;
+    perspective: none;
+  }
+  /* Каждая страница занимает всю ширину */
+  .book__page {
+    width: 100% !important;
+    position: relative !important;
+    transform: none !important;
+    transition: none !important;
+    margin-bottom: 20px; /* опционально для отступа между страницами */
+  }
+}
 
 .book {
   width: 100%;
