@@ -221,6 +221,7 @@ body {
 
 
 /*стили для оризонтального отображения на мобильном устройстве*/
+/*
 #rotate-overlay {
   position: fixed;
   top: 0;
@@ -230,7 +231,7 @@ body {
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
   z-index: 9999;
-  display: none; /* по умолчанию скрыт */
+  display: none; /* по умолчанию скрыт 
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -238,21 +239,22 @@ body {
 }
 
 #rotate-overlay .rotate-message img {
-  width: 80px; /* размер иконки, можно настроить */
+  width: 80px; /* размер иконки, можно настроить 
   height: auto;
   margin-bottom: 20px;
 }
 
 @media screen and (orientation: portrait) {
-  /* Показываем оверлей в портретном режиме */
+  /* Показываем оверлей в портретном режиме 
   #rotate-overlay {
     display: flex;
   }
 }
 
 @media screen and (orientation: landscape) {
-  /* В ландшафтной ориентации скрываем */
+  /* В ландшафтной ориентации скрываем 
   #rotate-overlay {
     display: none;
   }
 }
+  */
