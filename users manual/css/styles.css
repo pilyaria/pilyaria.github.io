@@ -46,6 +46,37 @@ body {
   transform: none;
 }
 
+@media (max-width: 600px) {
+  /* Адаптируем контейнер обложки */
+  .cover {
+    width: 100vw;
+    height: auto;
+    padding: 10px; /* по желанию, для отступов */
+    box-shadow: none;
+  }
+
+  /* Переключаем направление контейнера книги */
+  .book {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    perspective: none; /* можно отключить, если не нужен 3D эффект */
+  }
+
+  /* Страницы занимают всю ширину */
+  .book__page {
+    width: 100%;
+    height: auto; /* либо задайте фиксированную высоту, если требуется */
+    margin-bottom: 10px; /* отступ между страницами */
+    transform-origin: top center;
+  }
+  
+  /* При необходимости можно отключить эффекты перелистывания */
+  .book input[type=radio]:checked + .book__page {
+    transform: none;
+  }
+}
+
 /* Если ширина экрана меньше ширины .cover, масштабируем .cover так, чтобы он помещался */
 @media (max-width: calc(var(--baseline) * 80)) {
   .cover {
