@@ -37,74 +37,24 @@ body {
   justify-content: center;
 }
 
-/* Для широких экранов – обычный размер .cover */
 .cover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: calc(var(--baseline) * 80);
   height: calc(var(--baseline) * 55);
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
-  /* по умолчанию без масштабирования */
-  transform: none;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
 }
 
-@media (max-width: 600px) {
-  /* Адаптируем контейнер обложки */
+@media (max-width: 960px) {
   .cover {
-    width: 100vw;
-    height: auto;
-    padding: 10px; /* по желанию, для отступов */
-    box-shadow: none;
-  }
-
-  /* Переключаем направление контейнера книги */
-  .book {
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    perspective: none; /* можно отключить, если не нужен 3D эффект */
-  }
-
-  /* Страницы занимают всю ширину */
-  .book__page {
-    width: 100%;
-    height: auto; /* либо задайте фиксированную высоту, если требуется */
-    margin-bottom: 10px; /* отступ между страницами */
-    transform-origin: top center;
-  }
-  
-  /* При необходимости можно отключить эффекты перелистывания */
-  .book input[type=radio]:checked + .book__page {
-    transform: none;
-  }
-}
-
-/* Если ширина экрана меньше ширины .cover, масштабируем .cover так, чтобы он помещался */
-@media (max-width: calc(var(--baseline) * 80)) {
-  .cover {
-    transform: scale(calc(100vw / (var(--baseline) * 80)));
+    transform: translate(-50%, -50%) scale(calc(100vw / (var(--baseline) * 80)));
     transform-origin: center center;
   }
 }
 
-/* Также, если высота экрана меньше высоты .cover, масштабируем по высоте */
-@media (max-height: calc(var(--baseline) * 55)) {
-  .cover {
-    transform: scale(calc(100vh / (var(--baseline) * 55)));
-    transform-origin: center center;
-  }
-}
-
-/* Если оба условия актуальны, можно комбинировать масштабирование через функцию min() */
-@media (max-width: calc(var(--baseline) * 80)), (max-height: calc(var(--baseline) * 55)) {
-  .cover {
-    transform: scale(
-      min(
-        calc(100vw / (var(--baseline) * 80)),
-        calc(100vh / (var(--baseline) * 55))
-      )
-    );
-    transform-origin: center center;
-  }
-}
 
 .book {
   width: 100%;
