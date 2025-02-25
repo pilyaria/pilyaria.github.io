@@ -21,6 +21,8 @@
 }
 
 html, body {
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -35,10 +37,42 @@ body {
   justify-content: center;
 }
 
+/* Для широких экранов – обычный размер .cover */
 .cover {
   width: calc(var(--baseline) * 80);
   height: calc(var(--baseline) * 55);
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
+  /* по умолчанию без масштабирования */
+  transform: none;
+}
+
+/* Если ширина экрана меньше ширины .cover, масштабируем .cover так, чтобы он помещался */
+@media (max-width: calc(var(--baseline) * 80)) {
+  .cover {
+    transform: scale(calc(100vw / (var(--baseline) * 80)));
+    transform-origin: center center;
+  }
+}
+
+/* Также, если высота экрана меньше высоты .cover, масштабируем по высоте */
+@media (max-height: calc(var(--baseline) * 55)) {
+  .cover {
+    transform: scale(calc(100vh / (var(--baseline) * 55)));
+    transform-origin: center center;
+  }
+}
+
+/* Если оба условия актуальны, можно комбинировать масштабирование через функцию min() */
+@media (max-width: calc(var(--baseline) * 80)), (max-height: calc(var(--baseline) * 55)) {
+  .cover {
+    transform: scale(
+      min(
+        calc(100vw / (var(--baseline) * 80)),
+        calc(100vh / (var(--baseline) * 55))
+      )
+    );
+    transform-origin: center center;
+  }
 }
 
 .book {
