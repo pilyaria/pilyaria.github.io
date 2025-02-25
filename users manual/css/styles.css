@@ -47,7 +47,6 @@ body {
   transform: translate(-50%, -50%);
   transform-origin: center center;
 }
-
 @media (max-width: calc(var(--baseline) * 80)) {
   .cover {
     position: absolute;
@@ -61,21 +60,6 @@ body {
   }
 }
 
-@media (max-width: 768px) {
-  /* Переставляем элементы в колонку */
-  .book {
-    display: block;
-    perspective: none;
-  }
-  /* Каждая страница занимает всю ширину */
-  .book__page {
-    width: 100% !important;
-    position: relative !important;
-    transform: none !important;
-    transition: none !important;
-    margin-bottom: 20px; /* опционально для отступа между страницами */
-  }
-}
 
 .book {
   width: 100%;
@@ -233,4 +217,42 @@ body {
 .book input[type=radio]:checked + .book__page {
   transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
   transform: rotateY(-180deg);
+}
+
+
+/*стили для оризонтального отображения на мобильном устройстве*/
+#rotate-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  z-index: 9999;
+  display: none; /* по умолчанию скрыт */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+#rotate-overlay .rotate-message img {
+  width: 80px; /* размер иконки, можно настроить */
+  height: auto;
+  margin-bottom: 20px;
+}
+
+@media screen and (orientation: portrait) {
+  /* Показываем оверлей в портретном режиме */
+  #rotate-overlay {
+    display: flex;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  /* В ландшафтной ориентации скрываем */
+  #rotate-overlay {
+    display: none;
+  }
 }
