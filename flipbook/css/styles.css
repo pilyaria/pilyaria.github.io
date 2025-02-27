@@ -19,26 +19,26 @@
 
 body {
 	
-	font-family: 'Montserrat', sans-serif;
-	background-color: #2e3537;
-	padding: 20px 0; /* Отступ сверху и снизу */
-  	min-height: 100vh;
-	min-height: 100vh;
-	/* Убираем фиксированную высоту, чтобы при больших книгах страница могла скроллиться */
-	/* height: 100vh; */
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	overflow-x: hidden; /* Убираем горизонтальный скролл */
+    font-family: 'Montserrat', sans-serif;
+    background-color: #2e3537;
+    padding: 20px 0; /* Отступ сверху и снизу */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
 }
 .book {
-	width: 80vw;
-	max-width: 800px;
-	aspect-ratio: 350 / 450;
-	position: relative;
-	transition-duration: 1s;
-	perspective: 1200px;
-	margin-bottom: 20px; /* Отступ снизу, как сверху */
+    /* Задаём высоту книги равной полной высоте экрана за вычетом отступов */
+    height: calc(100vh - 40px);
+    /* Ширина вычисляется по новому соотношению сторон 4/3 */
+    width: calc((100vh - 40px) * (4 / 3));
+    /* Ограничиваем максимальную ширину, чтобы на узких экранах книга не выходила за пределы окна */
+    max-width: 80vw;
+    position: relative;
+    transition-duration: 1s;
+    perspective: 1200px;
+    margin-bottom: 20px; /* Отступ снизу, как сверху */
 	/*
 	width: 350px;
 	height: 450px;
@@ -50,7 +50,7 @@ body {
 
 @media (min-width: 1024px) {
 	.book {
-	  height: calc(100vh - 40px); /* 20px сверху и 20px снизу */
+	  height: calc(100vh - 20px); /* 20px сверху и 20px снизу */
 	  width: calc((100vh - 40px) * (350 / 450)); /* сохраняем соотношение сторон */
 	}
   }
