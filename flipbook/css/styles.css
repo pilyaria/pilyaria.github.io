@@ -76,6 +76,11 @@ input {
 	justify-content: center;
 	transform-origin: center left;
 }
+
+.cover img {
+    border-radius: 0 15px 15px 0;
+}
+
 .cover {
 	position: absolute;
 	z-index: 4;
@@ -121,6 +126,24 @@ input {
 	height: 100%;
 	border-radius: 15px 0 0 15px;
 }
+
+.front-page,
+.back-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    box-sizing: border-box;
+    /* Единый отступ для текста */
+    padding: 1rem; 
+}
+
+.back-page {
+    transform: rotateY(180deg);
+    z-index: 99;
+}
+
+/*
 .front-page {
 	position: absolute;
 	width: 100%;
@@ -137,6 +160,9 @@ input {
 	backface-visibility: hidden;
 	z-index: 99;
 }
+
+*/
+
 .next, .prev {
 	position: absolute;
 	bottom: 1em;
