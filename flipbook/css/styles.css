@@ -16,29 +16,35 @@
 	/*--base-size: var(--baseline) * 1.2;*/
   }
 
+/* Универсальный сброс для корректного расчёта размеров */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 
 body {
 	
-    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 20px;
     background-color: #2e3537;
-    padding: 20px 0; /* Отступ сверху и снизу */
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 .book {
-    /* Задаём высоту книги равной полной высоте экрана за вычетом отступов */
-    height: calc(100vh - 40px);
-    /* Ширина вычисляется по новому соотношению сторон 4/3 */
-    width: calc((100vh - 40px) * (4 / 3));
-    /* Ограничиваем максимальную ширину, чтобы на узких экранах книга не выходила за пределы окна */
-    max-width: 80vw;
+    /* Высота книги уменьшена, чтобы добавить отступы сверху и снизу */
+    height: calc(100vh - 80px);
+    /* Ширина вычисляется по новому соотношению сторон (4:3) */
+    width: calc((100vh - 80px) * (4 / 3));
+    /* Ограничиваем максимальную ширину */
+    max-width: calc(100vw - 40px);
     position: relative;
     transition-duration: 1s;
     perspective: 1200px;
-    margin-bottom: 20px; /* Отступ снизу, как сверху */
+    margin: auto; /* Центрируем книгу в области отображения */
 	/*
 	width: 350px;
 	height: 450px;
@@ -50,8 +56,8 @@ body {
 
 @media (min-width: 1024px) {
 	.book {
-	  height: calc(100vh - 20px); /* 20px сверху и 20px снизу */
-	  width: calc((100vh - 40px) * (350 / 450)); /* сохраняем соотношение сторон */
+	  height: calc(100vh - 40px); 
+	  width: calc((100vh - 40px) * (350 / 450));
 	}
   }
 
@@ -153,7 +159,7 @@ input {
 }
 #checkbox-cover:checked ~ .book {
 	/*transform: none;*/
-	transform: translateX(250px);
+	transform: translateX(50%);
 }
 #checkbox-cover:checked ~ .book .cover {
 	transition: transform 1.5s, z-index 0.5s 0.5s;
