@@ -12,9 +12,9 @@ body {
 .main-container{
     display: flex;
     flex-direction: row-reverse;
-    width: 1200px;
+    width: 50rem;
     background-color: #fff;
-    margin: 40px auto;
+    margin: 2.5rem auto;
     box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1);
   }
 
