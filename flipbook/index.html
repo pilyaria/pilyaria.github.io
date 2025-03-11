@@ -15,53 +15,292 @@
 </head>
 
 <body>
-  <input type="checkbox" id="checkbox-cover">
-  <input type="checkbox" id="checkbox-page1">
-  <input type="checkbox" id="checkbox-page2">
-  <input type="checkbox" id="checkbox-page3">
-  <div class="book">
-      <div class="cover">
+    <input type="checkbox" id="checkbox-cover">
+    <input type="checkbox" id="checkbox-page1">
+    <input type="checkbox" id="checkbox-page2">
+    <input type="checkbox" id="checkbox-page3">
+    <div class="book">
+        <div class="cover">
             <label for="checkbox-cover"></label>
-          <img src="img/freepik__the-style-is-modern-and-it-is-a-detailed-illustrat__82715.jpeg" style= "width: 100%; height: 100%; object-fit: cover;" alt="">
-          
-      </div>
-      <div class="page" id="page1">
-          <div class="front-page">
-            <p>СИСТЕМА ИЗМЕРИТЕЛЬНО-ВЫЧИСЛИТЕЛЬНАЯ</p>
-            <p>АСУТ-601М2</p>
-            <p>РУКОВОДСТВО ПО ЭКСПЛУАТАЦИИ</p>
-              <label class="next" for="checkbox-page1"><i class="fas fa-chevron-right"></i></label>
-          </div>
-          <div class="back-page">
-            <h2>Page 2</h2>
-            <p>1	ВВЕДЕНИЕ	6</p>
-            <p>2	Структура интернет-службы «Теплоинформ»	7</p>
-            <p>3	Описание работы с интернет-службой «Теплоинформ»	9</p>
-            <p>3.1	Доступ к веб-сайту	9</p>
-            <p>4	Раздел «Ведомости»	12</p>
-                
-              <label class="prev" for="checkbox-page1"><i class="fas fa-chevron-left"></i></label>
-          </div>
-      </div>
-      <div class="page" id="page2">
-          <div class="front-page">
-              <h2>Page 2</h2>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil magni laudantium beatae quia. Recusandae, fuga quas consectetur perferendis aperiam esse velit veniam ducimus? Quisquam consequatur perferendis quidem quia, recusandae ab!</p>
-              <label class="next" for="checkbox-page2"><i class="fas fa-chevron-right"></i></label>
-          </div>
-          <div class="back-page">
-              <img src="2.jpg">
-              <label class="prev" for="checkbox-page2"><i class="fas fa-chevron-left"></i></label>
-          </div>
-      </div>
-      <div class="page" id="page3">
-          <div class="front-page">
-              <h2>Page 3</h2>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil magni laudantium beatae quia. Recusandae, fuga quas consectetur perferendis aperiam esse velit veniam ducimus? Quisquam consequatur perferendis quidem quia, recusandae ab!</p>
-          </div>
-      </div>
-      <div class="back-cover"></div>
-  </div>
+            <img src="img/freepik__the-style-is-modern-and-it-is-a-detailed-illustrat__82715.jpeg"
+                style="width: 100%; height: 100%; object-fit: cover;" alt="">
+
+        </div>
+        <div class="page" id="page1">
+            <div class="front-page">
+                <div class="page__content">
+                    <h1 class="page__content-book-title">СИСТЕМА ИЗМЕРИТЕЛЬНО-ВЫЧИСЛИТЕЛЬНАЯ</h1>
+                    <h1 class="page__content-book-title">АСУТ-601М2</h1>
+                    <h2 class="page__content-author">РУКОВОДСТВО ПО ЭКСПЛУАТАЦИИ</h2>
+                    <div class="page__content-copyright">
+                        <p>Москва - 2025</p>
+                    </div>
+                </div>
+                <label class="next" for="checkbox-page1"><i class="fas fa-chevron-right"></i></label>
+            </div>
+            <div class="back-page">
+                <div class="page__content">
+                    <h1 class="page__content-title">Оглавление</h1>
+                    <table class="page__content-table">
+                        <tr>
+                            <td align="left">I</td>
+                            <td align="left">Введение</td>
+                            <td align="right">3</td>
+                        </tr>
+                        <tr>
+                            <td align="left">II</td>
+                            <td align="left">Структура интернет-службы &laquo;Теплоинформ&raquo;</td>
+                            <td align="right">4</td>
+                        </tr>
+                        <tr>
+                            <td align="left">III</td>
+                            <td align="left">Описание работы с&nbsp;интернет-службой &laquo;Теплоинформ&raquo;</td>
+                            <td align="right">5</td>
+                        </tr>
+                        <tr>
+                            <td align="left">IV</td>
+                            <td align="left">Раздел &laquo;Ведомости&raquo;</td>
+                            <td align="right">7</td>
+                        </tr>
+                        <tr>
+                            <td align="left">...</td>
+                            <td align="left"></td>
+                            <td align="right">...</td>
+                        </tr>
+                    </table>
+                    <div class="page__number">2</div>
+                </div>
+                <label class="prev" for="checkbox-page1"><i class="fas fa-chevron-left"></i></label>
+            </div>
+        </div>
+        <div class="page" id="page2">
+            <div class="front-page">
+                <div class="page__content">
+                    <h1 class="page__content-title">I Введение</h1>
+                    <div class="page__content-text">
+                        <p>Настоящий документ составлен для пользователя системы измерительно-вычислительной АСУТ-601М2
+                            (далее – Система). Система зарегистрирована в Госреестре средств измерений под № 69008-17.
+                        </p>
+                        <p>1.1 Система обеспечивает взаимодействие персонала с объектами учёта в процессе выполнения
+                            функций Системы, к которым относятся:</p>
+                        <ul class="my-projects-list">
+                            <li class="my-projects-item">
+                                визуализация данных учета на экране монитора в виде таблиц, графиков и мнемосхем;
+                            </li>
+                            <li class="my-projects-item">
+                                документирование результатов учета за сутки, за месяц и по состоянию на текущий момент;
+                            </li>
+                            <li class="my-projects-item">
+                                передача всех видов архивов и документов на сервер и по электронной почте;
+                            </li>
+                            <li class="my-projects-item">
+                                управление режимами работы системы.
+                            </li>
+                        </ul>
+                        <p>В информационной базе данных хранится следующая основная информация:</p>
+                        <ul class="my-projects-list">
+                            <li class="my-projects-item">
+                                Справочник пользователей системы;
+                            </li>
+                            <li class="my-projects-item">
+                                Справочник приборов учёта;
+                            </li>
+                            <li class="my-projects-item">
+                                Справочник переменных;
+                            </li>
+                            <li class="my-projects-item">
+                                Справочник устройств связи с привязкой к приборам учёта;
+                            </li>
+                            <li class="my-projects-item">
+                                Учётные данные (архивы) счётчиков;
+                            </li>
+                            <li class="my-projects-item">
+                                Очередь текущих задач системы;
+                            </li>
+                            <li class="my-projects-item">
+                                Журнал сбора данных с приборов;
+                            </li>
+                            <li class="my-projects-item">
+                                Журнал действий пользователей системы.
+                            </li>
+                        </ul>
+                        <p>1.2 Глубина хранения архивных данных и служебной информации в базе данных:</p>
+                        <ul class="my-projects-list">
+                            <li class="my-projects-item">
+                                текущие данные – 60 дней;
+                            </li>
+                            <li class="my-projects-item">
+                                часовые данные – 1 год;
+                            </li>
+                            <li class="my-projects-item">
+                                суточные данные – 5 лет;
+                            </li>
+                            <li class="my-projects-item">
+                                журнал сбора данных с приборов – 180 дней.
+                            </li>
+                        </ul>
+                        <p>1.3. Информация о параметрах счётчиков может выводиться для пользователя Системы на экран
+                            дисплея и/или на печать и представляется в виде суточных и месячных ведомостей заданной
+                            формы.</p>
+                        <p>1.4. Учитываемые данные защищены в системе от несанкционированного доступа.</p>
+
+                    </div>
+                    <div class="page__number">3</div>
+                </div>
+                <label class="next" for="checkbox-page2"><i class="fas fa-chevron-right"></i></label>
+            </div>
+            <div class="back-page">
+                <div class="page__content">
+                    <h1 class="page__content-title">II Структура интернет-службы «Теплоинформ»</h1>
+                    <div class="page__content-text">
+                        <p>Информационная система «Теплоинформ» обеспечивает:</p>
+                        <ul class="my-projects-list">
+                            <li class="my-projects-item">
+                                автоматический сбор учётных данных с приборов учета и контроля энергоресурсов;
+                            </li>
+                            <li class="my-projects-item">
+                                формирование отчётных ведомостей;
+                            </li>
+                            <li class="my-projects-item">
+                                контроль работы приборов;
+                            </li>
+                            <li class="my-projects-item">
+                                предоставление обслуживающему персоналу доступа к данным учёта средствами
+                                web-сервиса.
+                            </li>
+                        </ul>
+                        <p>Основные функциональные возможности ИС «Теплоинформ»:</p>
+                        <ul class="my-projects-list">
+                            <li class="my-projects-item">
+                                сбор данных со счетчиков;
+                            </li>
+                            <li class="my-projects-item">
+                                формирование посуточных и почасовых ведомостей учетных данных в формате Excel/PDF;
+                            </li>
+                            <li class="my-projects-item">
+                                формирование посуточных и почасовых ведомостей учетных данных по требованию
+                                пользователя в формате Excel/PDF;
+                            </li>
+                            <li class="my-projects-item">
+                                формирование пакетов ведомостей по группе приборов за расчетный период;
+                            </li>
+                            <li class="my-projects-item">
+                                формирование отчётов по диагностике системы;
+                            </li>
+                            <li class="my-projects-item">
+                                отображение информации в виде интерактивных графиков;
+                            </li>
+                            <li class="my-projects-item">
+                                пересчёт архивных данных в периоды отключения теплоносителя;
+                            </li>
+                            <li class="my-projects-item">
+                                чтение данных из прибора по запросу пользователя в реальном времени:
+                            </li>
+                            <li class="my-projects-item">
+                                контроль нештатных ситуаций:
+                            </li>
+                            <li class="my-projects-item">
+                                передача SMS-уведомлений о нештатных ситуациях;
+                            </li>
+                            <li class="my-projects-item">
+                                анализ учетных данных по группе теплосчётчиков по условиям:
+                            </li>
+                        </ul>
+                        <p>Сбор данных производится в автоматическом режиме или по запросу пользователя. Текущие значения можно читать с частотой до 1 минуты. Данные хранятся на сервере ИС «Теплоинформ».</p>
+                        <p>Опционально к оборудованию сбора данных можно подключить до 8-ми аналоговых или дискретных датчиков (наличия электропитания, проникновения, задымления, затопления и т.д.), которые будут автоматически отсылать сообщения при срабатывании.</p>
+                    </div>
+                    <div class="page__number">4</div>
+                    </div>
+                <label class="prev" for="checkbox-page2"><i class="fas fa-chevron-left"></i></label>
+            </div>
+        </div>
+        <div class="page" id="page3">
+            <div class="front-page">
+                <div class="page__content">
+                    <h1 class="page__content-title">III Описание работы с интернет-службой «Теплоинформ»</h1>
+                    <h2 class="page__content-title2">3.1	Доступ к веб-сайту</h2>
+                    <div class="page__content-text">
+                        <p>Доступ к ИС Доступ к ИС <b>«Теплоинформ»</b> осуществляется через Интернет. Для работы с ИС <b>«Теплоинформ»</b> необходимо перейти на сайт по ссылке с рабочего стола, после этого пользователь попадает на главную страницу сайта (Рис. 1). Для начала работы необходимо зайти в раздел <b>«Личный кабинет»</b>, нажав соответствующую кнопку в левой части страницы.</p>
+                        <div class="image-container">
+                            <img src="img/pic_1.png" alt="Вход в личный кабинет" class="page-image">
+                            <p class="image-caption">Рис. 1. Главная страница сайта</p>
+                        </div>
+                        <p>В футере (подвале) каждой страницы сайта доступно руководство пользователя для быстрого скачивания.</p>
+                        <p>В шапке каждой страницы сайта доступны кнопки звонка/сообщения/отправки электронного письма в службу поддержки.</p>
+                        <p>Меню навигации расположено слева.</p>
+                        <p>В личном кабинете отображается информация в соответствии набором прав пользователю.</p>
+                        <p>Для входа в личный кабинет необходимо ввести имя и пароль, которые предоставляет Администратор системы (см. Рис. 2).</p>
+                    </div>
+                    <div class="page__number">5</div>
+                </div>
+                <label class="next" for="checkbox-page3"><i class="fas fa-chevron-right"></i></label>
+            </div>
+            <div class="back-page">
+                <div class="page__content">
+                    <div class="page__content-text">
+                        <div class="image-container">
+                            <img src="img/pic_2.png" alt="Вход в личный кабинет" class="page-image">
+                            <p class="image-caption">Рис. 2. Вход в личный кабинет</p>
+                        </div>
+                        <p>В личном кабинете пользователю доступен просмотр информации по всем точкам учёта, сформирование почасовой или посуточной ведомости потребления энергоресурсов, чтение текущих значений.</p>
+                        <p>При успешном входе в личный кабинет на мониторе отображается информация о новых нештатных ситуациях, если такие возникли со времени Вашего последнего визита (см. Рис. 3).</p>
+                        <div class="image-container">
+                            <img src="img/pic_3.png" alt="Информация о новых событиях" class="page-image">
+                            <p class="image-caption">Рис. 3. Информация о новых событиях</p>
+                        </div>
+                        <p>При нажатии на кнопку «Квитировать» все новые сообщения будут считаться прочитанными. Все события (как новые, так и просмотренные/квитированные) отображаются в разделе «Контроль» (см. раздел 10).</p>
+                    </div>
+                    <div class="page__number">6</div>
+                </div>
+                <label class="prev" for="checkbox-page3"><i class="fas fa-chevron-left"></i></label>
+            </div>
+        </div>
+        <div class="page" id="page4">
+            <div class="front-page">
+                <div class="page__content">
+                    <h1 class="page__content-title">IV Раздел «Ведомости»</h1>
+                    <div class="page__content-text">
+                        <p>После ввода имени пользователя и пароля по умолчанию происходит вход в раздел «Ведомости». В этом разделе отображается список сгруппированных точек учёта.</p>
+                        <p>Из раздела «Ведомости» доступно:</p>
+                        <ul class="my-projects-list">
+                            <li class="my-projects-item">
+                                получение ведомости теплопотребления по одной точке учёта по суткам, по часам или по текущим данным.
+                            </li>
+                            <li class="my-projects-item">
+                                получение пакета ведомостей теплопотребления по нескольким точкам учёта. по суткам, по часам или по текущим данным;
+                            </li>
+                            <li class="my-projects-item">
+                                чтение почасового архива за текущие сутки в режиме реального времени;
+                            </li>
+                            <li class="my-projects-item">
+                                чтение текущих значений в режиме реального времени.
+                            </li>
+                        </ul>
+                        <h2 class="page__content-title2">4.1 Отображение точек учёта по одной</h2>
+                        <p>Для того чтобы точки учёта отображались по одной, необходимо в разделе «Настройки» установить опцию «Отображать точки учёта по одной»:</p>
+                        <div class="image-container">
+                            <img src="img/pic_4.png" alt="Настройка отображения точек учёта" class="page-image">
+                            <p class="image-caption">Рис. 5. Настройка отображения точек учёта</p>
+                        </div>
+                        <h3 class="page__content-title3">4.1.1 «Шапка» раздела «Ведомости»</h3>
+                        <p>В «шапке» раздела «Ведомости» расположены меню выбора точек учёта для отображения, кнопки обновления информации на странице и формирования ведомостей.</p>
+                        <div class="image-container">
+                            <img src="img/pic_5.png" alt="«Шапка» раздела «Ведомости»" class="page-image">
+                            <p class="image-caption">Рис. 6. «Шапка» раздела «Ведомости»</p>
+                        </div>
+                        <p>Так же в «шапке» расположена информация о пользователе. При нажатии на имя пользователя открывается меню с Настройками и выходом из системы:</p>
+                        <div class="image-container">
+                            <img src="img/pic_6.png" alt="Отображение авторизованного в системе пользователя" class="page-image">
+                            <p class="image-caption">Рис. 7. Отображение авторизованного в системе пользователя</p>
+                        </div>
+                        <p>Выбор точек учёта для отображения на странице «Ведомости» осуществляется с помощью выпадающего списка</p>
+                    </div>
+                    <div class="page__number">7</div>
+                </div>
+            </div>
+        </div>
+        <div class="back-cover"></div>
+    </div>
 </body>
 
 </html>
