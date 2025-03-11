@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,600|Tulpen+One&display=swap");
+
 :root {
 	/* colors */
 	--body-bg: #FAFAFA;
@@ -6,45 +7,51 @@
 	--dark-text: #2A2935;
 	/* spacing */
 	/* this is what defines the global scale */
-	--baseline: 12px;
+	--baseline: 0.95vw;
 	/* fonts */
 	--book-title: "Tulpen One", sans-serif;
 	--title: "Cormorant Garamond", serif;
 	--body: "Cormorant Garamond", serif;
 	--base-size: calc(var(--baseline) * 1.2);
-  
+
 	/*--base-size: var(--baseline) * 1.2;*/
-  }
+}
 
 /* Универсальный сброс для корректного расчёта размеров */
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
+html,
+body {
+	height: 100vh;
+	width: 100vw;
+}
 
 body {
-	
-    margin: 0;
-    padding: 20px;
-    background-color: #465154;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+	margin: 0;
+	padding: 1.25rem;
+	background-color: #465154;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
 }
+
 .book {
-    /* Высота книги уменьшена, чтобы добавить отступы сверху и снизу */
-    height: calc(100vh - 80px);
-    /* Ширина вычисляется по новому соотношению сторон (4:3) */
-    width: calc((100vh - 80px) * (4 / 3));
-    /* Ограничиваем максимальную ширину */
-    max-width: calc(100vw - 40px);
-    position: relative;
-    transition-duration: 1s;
-    perspective: 1200px;
-    margin: auto; /* Центрируем книгу в области отображения */
+	/* Высота книги уменьшена, чтобы добавить отступы сверху и снизу */
+	height: calc(100vh - 5rem);
+	/* Ширина вычисляется по новому соотношению сторон (4:3) */
+	width: calc((100vh - 5rem) * (4 / 3));
+	/* Ограничиваем максимальную ширину */
+	max-width: calc(100vw - 2.5rem);
+	position: relative;
+	transition-duration: 1s;
+	perspective: 75rem;
+	margin: auto;
+	/* Центрируем книгу в области отображения */
 	/*
 	width: 350px;
 	height: 450px;
@@ -56,21 +63,23 @@ body {
 
 @media (min-width: 1024px) {
 	.book {
-	  height: calc(100vh - 40px); 
-	  width: calc((100vh - 40px) * (350 / 450));
+		height: calc(100vh - 2.5rem);
+		width: calc((100vh - 2.5rem) * (350 / 450));
 	}
-  }
+}
 
 input {
 	display: none;
 }
-.cover, .back-cover {
+
+.cover,
+.back-cover {
 	background-color: #4173a5;
 	width: 100%;
 	height: 100%;
 	border-radius: 0 15px 15px 0;
 	/*box-shadow: 0 0 5px rgb(41, 41, 41);*/
-  	box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0 1.5625rem rgba(0, 0, 0, 0.3);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -78,7 +87,7 @@ input {
 }
 
 .cover img {
-    border-radius: 0 15px 15px 0;
+	border-radius: 0 15px 15px 0;
 }
 
 .cover {
@@ -86,6 +95,7 @@ input {
 	z-index: 4;
 	transition: transform 1s;
 }
+
 .cover label {
 	position: absolute;
 	top: 0;
@@ -94,113 +104,309 @@ input {
 	height: 100%;
 	cursor: pointer;
 	z-index: 2;
-	/*width: 100%;
-	height: 100%;
-	cursor: pointer;*/
 }
+
 .back-cover {
 	position: relative;
 	z-index: -1;
 }
+
 .page {
 	position: absolute;
+	/* position: relative; */
+	/* overflow: hidden; */
 	background-color: white;
-	width: calc(100% - 20px);
-	height: calc(100% - 20px);
+	width: calc(100% - 1.25rem);
+	height: calc(100% - 1.25rem);
 	/*
 	width: 330px;
 	height: 430px;
 	*/
 	border-radius: 0 15px 15px 0;
-	margin-top: 10px;
+	margin-top: 0.625rem;
 	transform-origin: left;
 	transform-style: preserve-3d;
 	transform: rotateY(0deg);
 	transition-duration: 1.5s;
-  	transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
-  	transform-origin: 0% 0%;
-  	background-image: linear-gradient(90deg, #e3e3e3 0%, rgba(247, 247, 247, 0) 20%);
+	transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
+	transform-origin: 0% 0%;
+	background-image: linear-gradient(90deg, #e3e3e3 0%, rgba(247, 247, 247, 0) 20%);
 }
+
 .page img {
 	width: 100%;
-	height: 100%;
-	border-radius: 15px 0 0 15px;
+	border: 1px solid #555; /* Серый контур */
+	/* border-radius: 15px 0 0 15px; */
+	margin-bottom: 1rem; /* Отступ снизу, чтобы текст не накладывался на изображение */
 }
 
 .front-page,
 .back-page {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    box-sizing: border-box;
-    /* Единый отступ для текста */
-    padding: 1rem; 
-}
-
-.back-page {
-    transform: rotateY(180deg);
-    z-index: 99;
-}
-
-/*
-.front-page {
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	backface-visibility: hidden;
 	box-sizing: border-box;
-	padding: 1rem;
+	/* Единый отступ для текста */
+	padding: 0.5rem;
+	transform-origin: center;
+	overflow: visible; /* разрешить отображение элементов */
 }
+
 .back-page {
 	transform: rotateY(180deg);
-	position: absolute;
+	/* z-index: 99; */
+	/* position: relative; */
+	/* Убедимся, что контейнер имеет позиционирование */
+	/* display: flex; */
+	/* justify-content: center; */
+	/* align-items: center; */
+	overflow: hidden;
+	/* Обрежет выходящее за границы изображение */
+	position: relative; /* Убедитесь, что используется relative, чтобы можно было позиционировать дочерние элементы */
+	z-index: 0; /* Убедитесь, что слои управляются корректно */
+}
+
+.back-page img {
 	width: 100%;
-	height: 100%;
-	backface-visibility: hidden;
-	z-index: 99;
+	height: auto;
+	z-index: 1;
+	position: relative;
+	right: 0; /* добавление отступа справа */
+    margin-right: 1rem ; /* отступ справа, если нужно */
 }
 
-*/
-
-.next, .prev {
-	position: absolute;
-	bottom: 1em;
-	cursor: pointer;
-}
-.next {
-	right: 1em;
-}
+.next,
 .prev {
-	left: 1em;
+	position: absolute;
+	bottom: 0.5em;
+	cursor: pointer;
+	z-index: 3;
+	/* Поверх img и тени */
 }
+
+.next {
+	right: 0.5em;
+}
+
+.prev {
+	left: 0.5em;
+}
+
 #page1 {
 	z-index: 3;
 }
+
 #page2 {
 	z-index: 2;
 }
+
 #page3 {
 	z-index: 1;
 }
-#checkbox-cover:checked ~ .book {
+
+#checkbox-cover:checked~.book {
 	/*transform: none;*/
 	transform: translateX(50%);
 }
-#checkbox-cover:checked ~ .book .cover {
+
+#checkbox-cover:checked~.book .cover {
 	transition: transform 1.5s, z-index 0.5s 0.5s;
 	transform: rotateY(-180deg);
 	z-index: 1;
 }
-#checkbox-cover:checked ~ .book .page {
+
+#checkbox-cover:checked~.book .page {
 	box-shadow: 0 0 3px rgb(99, 98, 98);
 }
-#checkbox-page1:checked ~ .book #page1 {
+
+#checkbox-page1:checked~.book #page1 {
 	transform: rotateY(-180deg);
 	z-index: 2;
 }
-#checkbox-page2:checked ~ .book #page2 {
+
+#checkbox-page2:checked~.book #page2 {
 	transform: rotateY(-180deg);
 	z-index: 3;
 }
 
+#checkbox-page3:checked~.book #page3 {
+	transform: rotateY(-180deg);
+	z-index: 4;
+}
+
+.page__content-book-title {
+	font-family: var(--book-title);
+	font-size: calc(var(--base-size) * 2);
+	/*font-weight: bold;*/
+	font-weight: 200;
+	text-transform: uppercase;
+	letter-spacing: 0.1875rem;
+	color: var(--dark-text);
+	margin-top: calc(var(--baseline) * 5);
+	margin-bottom: calc(var(--baseline) * 2);
+	text-align: center;
+}
+
+.page__content-author {
+	font-family: var(--title);
+	font-size: calc(var(--base-size) * 1.2);
+	font-weight: 100;
+	text-transform: uppercase;
+	color: var(--dark-text);
+	border-top: 1px solid var(--dark-text);
+	border-bottom: 1px solid var(--dark-text);
+	display: inline-block;
+	padding: calc(var(--baseline) / 2) calc(var(--baseline) / 5);
+	margin-bottom: calc(var(--baseline) * 6);
+	justify-content: center;
+	text-align: center;
+	display: flex;
+	width: 100%;
+	/* Растягивание элемента на всю ширину */
+}
+
+.page__content-copyright {
+	position: absolute;
+	width: calc(100% - (var(--baseline) * 2));
+	bottom: calc(var(--baseline) * 2);
+	font-family: var(--title);
+	font-size: calc(var(--base-size) * 0.8);
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.page__content {
+	display: flex;
+    flex-direction: column;
+	padding: var(--baseline);
+	height: 100%;
+	position: relative;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.page__content-title {
+	font-family: var(--title);
+	font-size: calc(var(--base-size) * 1);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-top: 0;
+	/* margin-top: calc(var(--baseline) * 1); */
+	margin-bottom: calc(var(--baseline) * 0.5);
+}
+.page__content-title2 {
+	font-family: var(--title);
+	font-size: calc(var(--base-size)* 1.1);
+	/* text-transform: uppercase;
+	letter-spacing: 1px; */
+	margin-top: 0;
+	margin-bottom: var(--baseline);
+}
+
+.page__content-title3 {
+	font-family: var(--title);
+	font-size: calc(var(--base-size)* 1);
+	/* text-transform: uppercase;
+	letter-spacing: 1px; */
+	margin-top: 0;
+	margin-bottom: 0;
+	/* margin-bottom: var(--baseline); */
+}
+
+.page__content-table {
+	width: 100%;
+	margin-top: calc(var(--baseline) * 2);
+}
+
+.page__content-table td {
+	font-family: var(--title);
+	font-size: calc(var(--base-size) * 1);
+	padding-bottom: calc(var(--baseline) * 1.5);
+	text-transform: uppercase;
+}
+
+.page__number {
+	position: absolute;
+	bottom: 0;
+	/* bottom: calc(var(--baseline) * 0.15); */
+	width: calc(100% - (var(--baseline) * 2));
+	font-family: var(--title);
+	font-size: calc(var(--base-size) * 0.9);
+	text-align: center;
+}
+
+.page__content-blockquote-text {
+	font-family: var(--title);
+	font-size: calc(var(--base-size) * 0.67);
+	font-style: italic;
+	text-align: justify;
+}
+
+.page__content-text {
+	font-family: var(--title);
+	font-size: calc(var(--base-size) * 0.85);
+	text-align: justify;
+	text-indent: var(--baseline);
+}
+
+.image-caption {
+    font-size: 0.8em; /* Уменьшаем размер шрифта по сравнению с основным текстом */
+    color: #555; /* Цвет подписи (можно настроить) */
+    text-align: center; /* Центрирует подпись */
+    margin-top: 1px; /* Отступ сверху */
+}
+
+.my-projects-list {
+	padding: 0 0 0 1.0625rem;
+}
+
+.my-projects-item {
+	color: black;
+}
+
+p, ul {
+    margin-top: 0;
+    margin-bottom: 0; /* Делаем равным межстрочному интервалу */
+   	line-height: 1.5; /* Установи подходящее значение */
+}
+.image-container {
+    text-align: center; /* Центрирует изображение и подпись */
+    /* margin: 1px 0; Отступы сверху и снизу */
+	width: 100%;
+	/* display: block; */
+	display: inline-block;
+}
+
+.image-container img {
+    max-width: 95%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.page-image {
+    max-width: 95%; /* Ensures the image fits the width of the page */
+    /* height: auto; Maintains the aspect ratio */
+    /* display: block; Ensures it behaves as a block-level element */
+    margin: 0 auto; /* Centers the image if needed */
+}
+
+.back-page p, .back-page .image-caption {
+    position: relative;
+    z-index: 2; /* поставить элементы поверх изображения */
+}
+
+img[src="img/pic_3.png"] {
+	width: 70%; /* Уменьшение ширины в 2 раза */
+	height: auto; /* Сохранение пропорций */
+	display: block; /* Чтобы убрать возможные пробелы вокруг изображения */
+	margin: 0 auto; /* Если нужно центрировать */
+  }
+
+  img[src="img/pic_6.png"] {
+	width: 15%; /* Уменьшение ширины в 2 раза */
+	height: auto; /* Сохранение пропорций */
+	display: block; /* Чтобы убрать возможные пробелы вокруг изображения */
+	margin: 0 auto; /* Если нужно центрировать */
+  }
