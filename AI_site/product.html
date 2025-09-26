@@ -40,7 +40,7 @@
     .buy-actions { display: flex; gap: 12px; margin: 16px 0 24px; }
     .btn-primary {
       display: inline-block; background: #3e59e0; color: #fff;
-      padding: 12px 20px; border: 0; border-radius: 8px;
+      padding: 12px 20px; border: 0; border-radius: 0;
       cursor: pointer; font-weight: 700;
     }
     .btn-primary:hover { background: #354fcb; }
@@ -70,9 +70,14 @@
           <del id="oldPrice"></del>
         </p>
 
+        <div id="features-section" class="features-wrap" hidden>
+          <h3 class="subhead">Key features</h3>
+          <ul id="features" class="features"></ul>
+        </div>
+
         <div class="buy-actions">
-          <button class="btn-primary" id="buyBtn">Купить</button>
-          <button class="btn-primary" id="addToCartBtn" style="background:#2e8b57">В корзину</button>
+          <button class="btn-primary" id="buyBtn">Buy</button>
+          <button class="btn-primary" id="addToCartBtn" style="background:#2e8b57">Add to cart</button>
         </div>
 
         <p id="sku" style="color:#888; font-size: 14px;"></p>
@@ -93,10 +98,16 @@
         title: "Winter hat",
         price: 1500, oldPrice: 2000, sku: "hat-001",
         images: [
-          "img/shop/assets_task_01k62vm0a7f8s9c4p2hmahd0t7_1758885239_img_0.webp",
-          "img/shop/assets_task_01k62vm0a7f8s9c4p2hmahd0t7_1758885239_img_1.webp"
+          "img/shop/assets_task_01k62vm0a7f8s9c4p2hmahd0t7_1758885239_img_0.webp"
+        
         ],
-        description: "Тёплая зимняя шапка из мягкого материала. Идеальна для прогулок в холодную погоду."
+        description: "A warm, soft-touch winter hat designed for everyday wear. The snug knit and cozy lining keep you comfortable in cold, windy conditions.",
+        features: [
+          "Soft knit with comfy inner lining",
+          "Warmth without bulk",
+          "Unisex, one-size fit",
+          "Easy care: machine wash cold"
+        ]
       },
       "hat-002": {
         title: "Winter hat",
@@ -104,57 +115,103 @@
         images: [
           "img/shop/assets_task_01k62vm0a7f8s9c4p2hmahd0t7_1758885239_img_1.webp"
         ],
-        description: "Базовая модель шапки с плотной вязкой и комфортной посадкой."
+        description: "A classic rib-knit beanie that holds its shape and fits neatly under a hood. Lightweight, breathable, and made for daily use.",
+        features: [
+          "Rib-knit construction for a secure fit",
+          "Breathable and comfortable all day",
+          "Works with helmets and hoods",
+          "Low-maintenance, quick-dry fabric"
+        ]
       },
       "boots-001": {
         title: "Winter boots",
         price: 720, oldPrice: 980, sku: "boots-001",
         images: [
-          "img/shop/assets_task_01k62wh0m5fzj9g3mjnwgj3cqh_1758886170_img_1.webp"
+          "img/shop/assets_task_01k62wh0m5fzj9g3mjnwgj3cqh_1758886170_img_1.webp",
+          "img/shop/assets_task_01k63bsy2yfqxb89v9g6ygy0jd_1758902310_img_0.webp"
         ],
-        description: "Зимние ботинки с нескользящей подошвой и утеплителем."
+        description: "Insulated winter boots built for traction and warmth. A durable upper and grippy outsole help you stay steady on wet or snowy surfaces.",
+        features: [
+          "Warm insulated lining",
+          "Water-resistant upper",
+          "Slip-resistant rubber outsole",
+          "Adjustable lace-up fit"
+        ]
       },
       "boots-002": {
         title: "Winter boots",
         price: 700, oldPrice: 1000, sku: "boots-002",
         images: [
-          "img/shop/assets_task_01k62wkbsyf2wtftvztpwb0vp9_1758886238_img_1.webp"
+          "img/shop/assets_task_01k62wkbsyf2wtftvztpwb0vp9_1758886238_img_1.webp",
+          "img/shop/assets_task_01k63bv1erfxpthsq0awxqybhe_1758902328_img_1.webp"
         ],
-        description: "Лёгкие и тёплые ботинки для повседневной носки."
+        description: "Everyday winter boots with a cozy lining and easy on/off design. Comfortable support for commuting, errands, and weekend walks.",
+        features: [
+          "Soft, warm lining",
+          "Water-repellent finish",
+          "Cushioned midsole for comfort",
+          "Easy entry design"
+        ]
       },
       "jacket-001": {
         title: "Winter jacket",
         price: 720, oldPrice: 980, sku: "jacket-001",
         images: [
           "img/shop/assets_task_01k62wx6cgfbgsqffh60tw87ym_1758886623_img_0.webp",
-          "img/shop/assets_task_01k62wx6cgfbgsqffh60tw87ym_1758886623_img_1.webp"
+          "img/shop/assets_task_01k63cbp5wenk8a37hpc2tfgdj_1758902856_img_0.webp"
         ],
-        description: "Тёплая куртка с водоотталкивающей пропиткой и капюшоном."
+        description: "A warm, everyday winter jacket with a weather-resistant shell and practical storage. Comfortable insulation without extra bulk.",
+        features: [
+          "Insulated core for reliable warmth",
+          "Water-repellent outer fabric",
+          "Adjustable hood",
+          "Multiple secure pockets"
+        ]
       },
       "jacket-002": {
         title: "Winter jacket",
         price: 700, oldPrice: 1000, sku: "jacket-002",
         images: [
-          "img/shop/assets_task_01k62wx6cgfbgsqffh60tw87ym_1758886623_img_1.webp"
+          "img/shop/assets_task_01k62wx6cgfbgsqffh60tw87ym_1758886623_img_1.webp",
+          "img/shop/assets_task_01k63cjs6qfsvaqs252bv4nhhh_1758903096_img_0.webp"
         ],
-        description: "Универсальная зимняя куртка с лёгким утеплителем."
+        description: "A lightweight insulated jacket with a clean, quilted look. Ideal for city wear and travel when you want warmth and easy layering.",
+        features: [
+          "Great warmth-to-weight",
+          "Wind-resistant shell",
+          "Packs easily for travel",
+          "Minimal, versatile design"
+        ]
       },
       "pants-001": {
         title: "Winter pants",
         price: 720, oldPrice: 980, sku: "pants-001",
         images: [
           "img/shop/assets_task_01k62x7gzhe8vbhby09zyrs7mt_1758886906_img_0.webp",
-          "img/shop/assets_task_01k62x7gzhe8vbhby09zyrs7mt_1758886906_img_1.webp"
+          "img/shop/assets_task_01k63c2y23e84a08whvtq9j256_1758902556_img_0.webp"
         ],
-        description: "Тёплые штаны с флисовой подкладкой."
+        description: "Warm winter pants with a soft inner feel and an easy straight fit. Great for walks, commutes, and casual outdoor time.",
+        features: [
+          "Cozy fleece-like interior",
+          "Straight, comfy fit",
+          "Secure zip pockets",
+          "Easy care for daily wear"
+        ]
       },
       "pants-002": {
         title: "Winter pants",
         price: 700, oldPrice: 1000, sku: "pants-002",
         images: [
-          "img/shop/assets_task_01k62x7gzhe8vbhby09zyrs7mt_1758886906_img_1.webp"
+          "img/shop/assets_task_01k62x7gzhe8vbhby09zyrs7mt_1758886906_img_1.webp",
+          "img/shop/assets_task_01k63caph4fsfahfap1y86nkvh_1758902800_img_0.webp"
         ],
-        description: "Штаны для активного отдыха зимой."
+        description: "Outdoor-ready winter pants with a soft, weather-resistant face and a comfortable lining. Built for movement and changing conditions.",
+        features: [
+          "Water-repellent soft-shell",
+          "Soft inner backing for warmth",
+          "Articulated knees for mobility",
+          "Adjustable hem to fit over boots"
+        ]
       }
     };
 
@@ -164,6 +221,7 @@
     // Получаем id из URL
     const id = new URLSearchParams(location.search).get('id');
     const product = id && PRODUCTS[id];
+    
 
     if (!product) {
       document.getElementById('not-found').hidden = false;
@@ -174,6 +232,7 @@
       document.getElementById('price').textContent = fmtPrice(product.price);
       document.getElementById('oldPrice').textContent = product.oldPrice ? fmtPrice(product.oldPrice) : '';
       document.getElementById('desc').textContent = product.description || '';
+      // document.getElementById('fech').textContent = product.features || '';
       document.getElementById('sku').textContent = 'ID: ' + product.sku;
 
       // Галерея
@@ -214,10 +273,10 @@
 
       // Кнопки (демо)
       document.getElementById('buyBtn').addEventListener('click', () => {
-        alert('Покупка: ' + product.title + ' (' + product.sku + ')');
+        alert('Purchasing goods: ' + product.title + ' (' + product.sku + ')');
       });
       document.getElementById('addToCartBtn').addEventListener('click', () => {
-        alert('Добавлено в корзину: ' + product.title);
+        alert('Added to cart: ' + product.title);
       });
     }
   </script>
