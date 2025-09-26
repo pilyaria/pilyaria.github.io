@@ -1,34 +1,41 @@
-$('.main-btn').click(function() {
+// открыть/закрыть список
+$('.main-btn').on('click', function () {
   $('.search-description').slideToggle(100);
 });
 
-$('.search-description li').click(function() {
-  var target = $(this).html();
-  var newTarget = target.replace('By ', '');
+// выбор режима по data-target (photo / ai)
+$('.search-description li').on('click', function () {
+  const target = $(this).data('target'); // 'photo' или 'ai'
 
-  // меняем текст кнопки
-  $('.search-large').html(newTarget);
+  // меняем подпись на кнопке (убираем 'By ')
+  $('.search-large').text($(this).text().replace(/^By\s+/i, ''));
 
-  // скрываем список
   $('.search-description').hide();
 
-  // показываем нужное поле
-  $('.main-input').hide();
-  $('.main-' + newTarget.toLowerCase()).show();
+  // показать нужное поле, если оно существует
+  const $field = $('.main-' + target);
+  if ($field.length) {
+    $('.main-input').hide();
+    $field.show();
+  } else {
+    console.warn('No input for mode:', target);
+    // fallback: ничего не скрываем дополнительно
+  }
 });
 
-$('#main-submit-mobile').click(function() {
+// мобильная отправка (если нужна)
+$('#main-submit-mobile').on('click', function () {
   $('#main-submit').trigger('click');
 });
 
-// вспомогательные функции для плейсхолдеров
+// плейсхолдеры как в оригинале
 function clearText(thefield) {
-  if (thefield.defaultValue == thefield.value) {
+  if (thefield.defaultValue === thefield.value) {
     thefield.value = "";
   }
 }
 function replaceText(thefield) {
-  if (thefield.value == "") {
+  if (thefield.value === "") {
     thefield.value = thefield.defaultValue;
   }
 }
