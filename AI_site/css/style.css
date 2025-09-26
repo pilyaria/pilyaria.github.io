@@ -30,35 +30,6 @@ body {
   color: #555;
 }
 
-.search-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-.search-form input {
-  padding: 10px 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  flex: 1 1 200px;
-}
-
-.search-form button {
-  background: #0066cc;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 12px 20px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.2s;
-}
-
-.search-form button:hover {
-  background: #004c99;
-}
-
 /* === Products section === */
 .products {
   display: grid;
@@ -146,43 +117,18 @@ footer {
 
 /* === Responsive === */
 @media (max-width: 768px) {
-  .centerbox h1 {
-    font-size: 24px;
-  }
-
-  .product h3 {
-    font-size: 18px;
-  }
-
-  .product p {
-    font-size: 16px;
-  }
-
-  .cta h2 {
-    font-size: 22px;
-  }
-}
-
-@media (max-width: 480px) {
-  .search-form {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .search-form input,
-  .search-form button {
-    width: 100%;
-  }
+  .centerbox h1 { font-size: 24px; }
+  .product h3 { font-size: 18px; }
+  .product p  { font-size: 16px; }
+  .cta h2     { font-size: 22px; }
 }
 
 /* =========================
    MULTI-SEARCH (CodePen-like)
    ========================= */
 
-/* Сбрасываем flex/gap у формы, чтобы элементы стыковались вплотную */
-.centerbox .search-form {
-  display: block !important;
-}
+/* форма мультипоиска — без flex/gap (стыковка плотная) */
+.centerbox .search-form { display: block !important; }
 
 /* Контейнер мультипоиска */
 .centerbox .main-form-container {
@@ -191,13 +137,13 @@ footer {
   display: inline-block;
 }
 
-/* Поля ввода (по умолчанию скрыты, кроме .main-name) */
+/* Поля ввода (по умолчанию скрыты) */
 .centerbox .main-input {
   display: none;
   float: left;
   height: 50px;
   width: 327px;
-  background: #ffffff url(../img/search.png) 18px 15px no-repeat; /* иконка лупы */
+  background: #ffffff url(../img/search.png) 18px 15px no-repeat; /* твоя иконка лупы */
   background-size: 18px 18px;
   color: #4a4a4a;
   border: 1px solid #cccccc;
@@ -209,8 +155,8 @@ footer {
   box-sizing: border-box;
 }
 
-/* Показываем поиск по имени как стартовый */
-.centerbox .main-name { display: inline-block; }
+/* Стартовый видимый инпут — под надписью "Photo" */
+.centerbox .main-photo { display: inline-block; }
 
 /* Кнопка-комбо (селектор "SEARCH BY ...") */
 .centerbox .main-btn {
@@ -220,7 +166,7 @@ footer {
   position: relative;
   border: 1px solid #cccccc;
   border-right: 0;
-  border-radius: 0;                 /* важно: без скруглений */
+  border-radius: 0; /* без скруглений */
   background: #ffffff url("https://cdn-icons-png.flaticon.com/512/32/32195.png") 122px 22px no-repeat; /* стрелка вниз */
   background-size: 10px 10px;
   cursor: pointer;
@@ -238,7 +184,7 @@ footer {
   line-height: 1;
 }
 
-/* Значение (Name / Location) — жирное */
+/* Значение (Photo / AI) */
 .centerbox .search-large {
   position: absolute;
   top: 20px;
@@ -264,15 +210,13 @@ footer {
   cursor: pointer;
   box-sizing: border-box;
 }
-.centerbox #main-submit:hover {
-  background: #3e59e0;
-}
+.centerbox #main-submit:hover { background: #354fcb; }
 
-/* Дропдаун со списком вариантов */
+/* Дропдаун */
 .centerbox ul.search-description {
   position: absolute;
   top: 55px;
-  right: 143px;                     /* выравнивание относительно .main-btn */
+  right: 143px;
   width: 150px;
   padding: 14px 0;
   margin: 0;
@@ -292,20 +236,13 @@ footer {
   color: #4a4a4a;
   cursor: pointer;
 }
-.centerbox .search-description li:hover {
-  background: #f8f8f8;
-}
+.centerbox .search-description li:hover { background: #f8f8f8; }
 
-/* Мобильная кнопка (не используется в десктопе) */
-.centerbox #main-submit-mobile {
-  display: none;
-}
-
-/* ---------- Узкие экраны ---------- */
+/* Мобила */
 @media (max-width: 516px) {
   .centerbox .main-input {
     width: 100%;
-    border-radius: 4px;            /* инпут отдельной строкой */
+    border-radius: 4px;
     border-right: 1px solid #cccccc;
     float: none;
     margin-bottom: 8px;
@@ -317,7 +254,5 @@ footer {
     border-radius: 4px;
     margin-bottom: 8px;
   }
-  .centerbox ul.search-description {
-    right: 0;
-  }
+  .centerbox ul.search-description { right: 0; }
 }
