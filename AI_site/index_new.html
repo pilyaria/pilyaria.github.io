@@ -19,64 +19,69 @@
       <h1>Multi Search with Combo Box</h1>
       <div class="main-form-container">
         <form id="main-form" method="post">
-          <input type="text" class="main-input main-AI" name="AI" value="Search by AI"
+          <!-- ВАЖНО: классы нижним регистром -->
+          <input type="text" class="main-input main-ai" name="AI" value="Search by AI"
                  onfocus="clearText(this)" onblur="replaceText(this)" />
           <input type="text" class="main-input main-photo" name="PHOTO" value="Search by photo"
                  onfocus="clearText(this)" onblur="replaceText(this)" />
+
           <button type="button" class="main-btn">
             <p class="search-small">SEARCH BY</p>
-            <p class="search-large">AI</p>
+            <p class="search-large">Photo</p>
           </button>
+
+          <!-- добавили data-target -->
           <ul class="search-description">
-            <li>By Photo</li>
-            <li>By AI</li>
+            <li data-target="photo">By Photo</li>
+            <li data-target="ai">By AI</li>
           </ul>
+
           <input id="main-submit" type="submit" value="Search" />
         </form>
       </div>
-      <!-- Mobile submit -->
-      <button type="button" id="main-submit-mobile">Search</button>
+      <!-- Mobile submit
+      <button type="button" id="main-submit-mobile">Search</button> -->
     </section>
 
-    <!-- Тарифы -->
+    <!-- Товары -->
     <section class="products">
       <div class="product">
-        <img src="img/shop/assets_task_01k62vm0a7f8s9c4p2hmahd0t7_1758885239_img_0.webp" alt="Тариф Контроль">
+        <img src="img/shop/assets_task_01k62vm0a7f8s9c4p2hmahd0t7_1758885239_img_0.webp" alt="Winter hat">
         <h3>Winter hat</h3>
         <p><strong>₽1500</strong> <del>₽2000</del></p>
       </div>
       <div class="product">
-        <img src="img/shop/assets_task_01k62vm0a7f8s9c4p2hmahd0t7_1758885239_img_1.webp" alt="Тариф Базовый">
+        <img src="img/shop/assets_task_01k62vm0a7f8s9c4p2hmahd0t7_1758885239_img_1.webp" alt="Winter hat">
         <h3>Winter hat</h3>
         <p><strong>₽1200</strong> <del>₽1500</del></p>
       </div>
       <div class="product">
-        <img src="img/shop/assets_task_01k62wh0m5fzj9g3mjnwgj3cqh_1758886170_img_1.webp" alt="Тариф Учёт">
+        <img src="img/shop/assets_task_01k62wh0m5fzj9g3mjnwgj3cqh_1758886170_img_1.webp" alt="Winter boots">
         <h3>Winter boots</h3>
         <p><strong>₽720</strong> <del>₽980</del></p>
       </div>
       <div class="product">
-        <img src="img/shop/assets_task_01k62wkbsyf2wtftvztpwb0vp9_1758886238_img_1.webp" alt="Поверка">
+        <img src="img/shop/assets_task_01k62wkbsyf2wtftvztpwb0vp9_1758886238_img_1.webp" alt="Winter boots">
         <h3>Winter boots</h3>
         <p><strong>₽700</strong> <del>₽1000</del></p>
       </div>
       <div class="product">
-        <img src="img/shop/assets_task_01k62wx6cgfbgsqffh60tw87ym_1758886623_img_0.webp" alt="Тариф Учёт">
+        <img src="img/shop/assets_task_01k62wx6cgfbgsqffh60tw87ym_1758886623_img_0.webp" alt="Winter jacket">
         <h3>Winter jacket</h3>
         <p><strong>₽720</strong> <del>₽980</del></p>
       </div>
       <div class="product">
-        <img src="img/shop/assets_task_01k62wx6cgfbgsqffh60tw87ym_1758886623_img_1.webp" alt="Поверка">
+        <img src="img/shop/assets_task_01k62wx6cgfbgsqffh60tw87ym_1758886623_img_1.webp" alt="Winter jacket">
         <h3>Winter jacket</h3>
         <p><strong>₽700</strong> <del>₽1000</del></p>
       </div>
-        <div class="product">
-        <img src="img/shop/assets_task_01k62x7gzhe8vbhby09zyrs7mt_1758886906_img_0.webp" alt="Тариф Учёт">
+      <div class="product">
+        <img src="img/shop/assets_task_01k62x7gzhe8vbhby09zyrs7mt_1758886906_img_0.webp" alt="Winter pants">
         <h3>Winter pants</h3>
         <p><strong>₽720</strong> <del>₽980</del></p>
       </div>
       <div class="product">
-        <img src="img/shop/assets_task_01k62x7gzhe8vbhby09zyrs7mt_1758886906_img_1.webp" alt="Поверка">
+        <img src="img/shop/assets_task_01k62x7gzhe8vbhby09zyrs7mt_1758886906_img_1.webp" alt="Winter pants">
         <h3>Winter pants</h3>
         <p><strong>₽700</strong> <del>₽1000</del></p>
       </div>
@@ -86,7 +91,7 @@
     <section class="cta">
       <h2>Experience the convenience of the new smart search.</h2>
       <p>Our company provides services for automating quick search.</p>
-      <a href="" target="_blank">leave a request</a>
+      <a href="#" target="_blank">leave a request</a>
     </section>
 
   </div>
