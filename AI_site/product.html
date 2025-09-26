@@ -2,12 +2,14 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title id="page-title">Товар — AI Shop</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Product — AI SEARCH</title>
+  <link rel="shortcut icon" href="img/teploicon1.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Стили для страницы товара -->
   <style>
-    /* Мини-стили для карточки товара (поверх вашего style.css) */
     .breadcrumb { margin: 12px 0 24px; font-size: 14px; }
     .breadcrumb a { color: #0066cc; text-decoration: none; }
     .breadcrumb a:hover { text-decoration: underline; }
@@ -37,14 +39,19 @@
     .price { margin: 8px 0 16px; font-size: 20px; }
     .price strong { font-size: 26px; margin-right: 8px; }
     .price del { color: #999; }
-    .buy-actions { display: flex; gap: 12px; margin: 16px 0 24px; }
-    .btn-primary {
-      display: inline-block; background: #3e59e0; color: #fff;
-      padding: 12px 20px; border: 0; border-radius: 0;
-      cursor: pointer; font-weight: 700;
-    }
-    .btn-primary:hover { background: #354fcb; }
+    .sku { color:#888; font-size: 14px; margin: 0 0 12px; }
     .desc { color: #555; line-height: 1.6; }
+
+    /* КНОПКИ */
+    .buy-actions { display: flex; gap: 12px; margin: 16px 0 24px; }
+    .btn {
+      display: inline-block; padding: 12px 20px; border: 0; border-radius: 0;
+      cursor: pointer; font-weight: 700; font-family: inherit;
+    }
+    .btn-primary { background: #3e59e0; color: #fff; }
+    .btn-primary:hover { background: #354fcb; }
+    .btn-secondary { background: #2e8b57; color: #fff; }
+    .btn-secondary:hover { filter: brightness(0.95); }
 
     @media (max-width: 900px) {
       .product-detail { grid-template-columns: 1fr; }
@@ -53,10 +60,12 @@
 </head>
 <body>
   <div class="main-container">
+
     <nav class="breadcrumb">
-      <a href="index.html">← back</a>
+      <a href="index.html">← Back to catalog</a>
     </nav>
 
+    <!-- Карточка товара -->
     <section id="product" class="product-detail" hidden>
       <div class="gallery">
         <img id="hero" src="" alt="">
@@ -70,37 +79,36 @@
           <del id="oldPrice"></del>
         </p>
 
-        <div id="features-section" class="features-wrap" hidden>
+        <!-- КНОПКИ: вернули -->
+        <div class="buy-actions">
+          <button class="btn btn-primary" id="buyBtn">Buy</button>
+          <button class="btn btn-secondary" id="addToCartBtn">Add to cart</button>
+        </div>
+
+        <p id="sku" class="sku"></p>
+        <p id="desc" class="desc"></p>
+
+        <!-- Key features -->
+        <section id="features-section" class="features-wrap" hidden>
           <h3 class="subhead">Key features</h3>
           <ul id="features" class="features"></ul>
-        </div>
-
-        <div class="buy-actions">
-          <button class="btn-primary" id="buyBtn">Buy</button>
-          <button class="btn-primary" id="addToCartBtn" style="background:#2e8b57">Add to cart</button>
-        </div>
-
-        <p id="sku" style="color:#888; font-size: 14px;"></p>
-        <p id="desc" class="desc"></p>
+        </section>
       </div>
     </section>
 
     <section id="not-found" hidden>
       <h1>Товар не найден</h1>
-      <p><a href="index_new.html">Вернуться на главную</a></p>
+      <p><a href="index.html">Вернуться в каталог</a></p>
     </section>
   </div>
 
+  <!-- ДАННЫЕ ТОВАРОВ -->
   <script>
-    // 👉 Твои товары (подставила пути к картинкам из index_new.html)
-    const PRODUCTS = {
+    window.PRODUCTS = {
       "hat-001": {
         title: "Winter hat",
         price: 1500, oldPrice: 2000, sku: "hat-001",
-        images: [
-          "img/shop/assets_task_01k62vm0a7f8s9c4p2hmahd0t7_1758885239_img_0.webp"
-        
-        ],
+        images: ["img/shop/assets_task_01k62vm0a7f8s9c4p2hmahd0t7_1758885239_img_0.webp"],
         description: "A warm, soft-touch winter hat designed for everyday wear. The snug knit and cozy lining keep you comfortable in cold, windy conditions.",
         features: [
           "Soft knit with comfy inner lining",
@@ -112,9 +120,7 @@
       "hat-002": {
         title: "Winter hat",
         price: 1200, oldPrice: 1500, sku: "hat-002",
-        images: [
-          "img/shop/assets_task_01k62vm0a7f8s9c4p2hmahd0t7_1758885239_img_1.webp"
-        ],
+        images: ["img/shop/assets_task_01k62vm0a7f8s9c4p2hmahd0t7_1758885239_img_1.webp"],
         description: "A classic rib-knit beanie that holds its shape and fits neatly under a hood. Lightweight, breathable, and made for daily use.",
         features: [
           "Rib-knit construction for a secure fit",
@@ -214,71 +220,74 @@
         ]
       }
     };
+  </script>
 
-    // Вспомогалки
-    const fmtPrice = n => '₽' + Number(n).toLocaleString('ru-RU');
+  <!-- РЕНДЕР карточки товара -->
+  <script>
+    (function () {
+      const params = new URLSearchParams(location.search);
+      const id = params.get('id');
+      const db = window.PRODUCTS || {};
+      const item = db[id];
 
-    // Получаем id из URL
-    const id = new URLSearchParams(location.search).get('id');
-    const product = id && PRODUCTS[id];
-    
+      const notFound = document.getElementById('not-found');
+      const productSec = document.getElementById('product');
+      if (!item) {
+        notFound.hidden = false;
+        return;
+      }
 
-    if (!product) {
-      document.getElementById('not-found').hidden = false;
-    } else {
-      // Заголовки/цены
-      document.getElementById('page-title').textContent = product.title + ' — AI Shop';
-      document.getElementById('name').textContent = product.title;
-      document.getElementById('price').textContent = fmtPrice(product.price);
-      document.getElementById('oldPrice').textContent = product.oldPrice ? fmtPrice(product.oldPrice) : '';
-      document.getElementById('desc').textContent = product.description || '';
-      // document.getElementById('fech').textContent = product.features || '';
-      document.getElementById('sku').textContent = 'ID: ' + product.sku;
+      // Заголовок страницы
+      document.getElementById('page-title').textContent = `${item.title} — AI SEARCH`;
 
       // Галерея
       const hero = document.getElementById('hero');
-      hero.src = product.images[0];
-      hero.alt = product.title;
-
       const thumbs = document.getElementById('thumbs');
-      product.images.forEach((src, i) => {
+      hero.src = item.images[0];
+      hero.alt = item.title;
+      thumbs.innerHTML = '';
+      (item.images || []).forEach((src, i) => {
         const t = document.createElement('img');
         t.src = src;
-        t.alt = product.title + ' ' + (i + 1);
+        t.alt = `${item.title} ${i+1}`;
         t.addEventListener('click', () => { hero.src = src; });
         thumbs.appendChild(t);
       });
 
-      document.getElementById('product').hidden = false;
+      // Текстовая информация
+      document.getElementById('name').textContent = item.title;
+      document.getElementById('price').textContent = '₽' + Number(item.price).toLocaleString('ru-RU');
+      document.getElementById('oldPrice').textContent = item.oldPrice ? '₽' + Number(item.oldPrice).toLocaleString('ru-RU') : '';
+      document.getElementById('sku').textContent = 'ID: ' + item.sku;
+      document.getElementById('desc').textContent = item.description || '';
 
-      // JSON-LD (SEO)
-      const ld = {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": product.title,
-        "image": product.images,
-        "sku": product.sku,
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "RUB",
-          "price": String(product.price),
-          "availability": "https://schema.org/InStock",
-          "url": location.href
-        }
-      };
-      const s = document.createElement('script');
-      s.type = 'application/ld+json';
-      s.textContent = JSON.stringify(ld);
-      document.head.appendChild(s);
+      // Features
+      const featuresWrap = document.getElementById('features-section');
+      const featuresEl = document.getElementById('features');
+      if (item.features && item.features.length) {
+        featuresEl.innerHTML = item.features.map(f => `<li>${f}</li>`).join('');
+        featuresWrap.hidden = false;
+      } else {
+        featuresWrap.hidden = true;
+      }
 
-      // Кнопки (демо)
-      document.getElementById('buyBtn').addEventListener('click', () => {
-        alert('Purchasing goods: ' + product.title + ' (' + product.sku + ')');
-      });
-      document.getElementById('addToCartBtn').addEventListener('click', () => {
-        alert('Added to cart: ' + product.title);
-      });
-    }
+      // Показать карточку
+      productSec.hidden = false;
+
+      // Обработчики кнопок (демо)
+      const buyBtn = document.getElementById('buyBtn');
+      const cartBtn = document.getElementById('addToCartBtn');
+      if (buyBtn) {
+        buyBtn.addEventListener('click', () => {
+          alert('Purchase: ' + item.title + ' (' + item.sku + ')');
+        });
+      }
+      if (cartBtn) {
+        cartBtn.addEventListener('click', () => {
+          alert('Added to cart: ' + item.title);
+        });
+      }
+    })();
   </script>
 </body>
 </html>
