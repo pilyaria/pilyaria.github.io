@@ -16,10 +16,10 @@
 
     <!-- Поиск -->
     <section class="centerbox">
-      <h1>Multi Search with Combo Box</h1>
+      <h1>Multi Search with Yandex AI</h1>
       <div class="main-form-container">
         <form id="main-form" method="post">
-          <!-- ВАЖНО: классы нижним регистром -->
+          <!-- поля поиска -->
           <input type="text" class="main-input main-ai" name="AI" value="Search by AI"
                  onfocus="clearText(this)" onblur="replaceText(this)" />
           <input type="text" class="main-input main-photo" name="PHOTO" value="Search by photo"
@@ -30,7 +30,7 @@
             <p class="search-large">Photo</p>
           </button>
 
-          <!-- добавили data-target -->
+          <!-- меню режимов с ключами -->
           <ul class="search-description">
             <li data-target="photo">By Photo</li>
             <li data-target="ai">By AI</li>
@@ -39,11 +39,9 @@
           <input id="main-submit" type="submit" value="Search" />
         </form>
       </div>
-      <!-- Mobile submit
-      <button type="button" id="main-submit-mobile">Search</button> -->
     </section>
 
-    <!-- Товары -->
+    <!-- Каталог -->
     <section class="products">
       <a class="product" href="product.html?id=hat-001" aria-label="Winter hat">
         <img src="img/shop/assets_task_01k62vm0a7f8s9c4p2hmahd0t7_1758885239_img_0.webp" alt="Winter hat">
