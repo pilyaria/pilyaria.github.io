@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title id="page-title">Товар — AI Shop</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Мини-стили для карточки товара (поверх вашего style.css) */
+    .breadcrumb { margin: 12px 0 24px; font-size: 14px; }
+    .breadcrumb a { color: #0066cc; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    .product-detail {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .gallery { display: flex; flex-direction: column; gap: 12px; }
+    .gallery #hero {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #eee;
+      object-fit: cover;
+    }
+    .thumbs { display: flex; gap: 8px; flex-wrap: wrap; }
+    .thumbs img {
+      width: 88px; height: 88px; object-fit: cover;
+      border: 1px solid #ddd; border-radius: 8px; cursor: pointer;
+      transition: transform .1s;
+    }
+    .thumbs img:hover { transform: scale(1.03); }
+
+    .info h1 { margin: 0 0 12px; font-size: 28px; }
+    .price { margin: 8px 0 16px; font-size: 20px; }
+    .price strong { font-size: 26px; margin-right: 8px; }
+    .price del { color: #999; }
+    .buy-actions { display: flex; gap: 12px; margin: 16px 0 24px; }
+    .btn-primary {
+      display: inline-block; background: #3e59e0; color: #fff;
+      padding: 12px 20px; border: 0; border-radius: 8px;
+      cursor: pointer; font-weight: 700;
+    }
+    .btn-primary:hover { background: #354fcb; }
+    .desc { color: #555; line-height: 1.6; }
+
+    @media (max-width: 900px) {
+      .product-detail { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <nav class="breadcrumb">
+      <a href="index.html">← back</a>
+    </nav>
+
+    <section id="product" class="product-detail" hidden>
+      <div class="gallery">
+        <img id="hero" src="" alt="">
+        <div id="thumbs" class="thumbs"></div>
+      </div>
+
+      <div class="info">
+        <h1 id="name"></h1>
+        <p class="price">
+          <strong id="price"></strong>
+          <del id="oldPrice"></del>
+        </p>
+
+        <div class="buy-actions">
+          <button class="btn-primary" id="buyBtn">Купить</button>
+          <button class="btn-primary" id="addToCartBtn" style="background:#2e8b57">В корзину</button>
+        </div>
+
+        <p id="sku" style="color:#888; font-size: 14px;"></p>
+        <p id="desc" class="desc"></p>
+      </div>
+    </section>
+
+    <section id="not-found" hidden>
+      <h1>Товар не найден</h1>
+      <p><a href="index_new.html">Вернуться на главную</a></p>
+    </section>
+  </div>
+
+  <script>
+    // 👉 Твои товары (подставила пути к картинкам из index_new.html)
+    const PRODUCTS = {
+      "hat-001": {
+        title: "Winter hat",
+        price: 1500, oldPrice: 2000, sku: "hat-001",
+        images: [
+          "img/shop/assets_task_01k62vm0a7f8s9c4p2hmahd0t7_1758885239_img_0.webp",
+          "img/shop/assets_task_01k62vm0a7f8s9c4p2hmahd0t7_1758885239_img_1.webp"
+        ],
+        description: "Тёплая зимняя шапка из мягкого материала. Идеальна для прогулок в холодную погоду."
+      },
+      "hat-002": {
+        title: "Winter hat",
+        price: 1200, oldPrice: 1500, sku: "hat-002",
+        images: [
+          "img/shop/assets_task_01k62vm0a7f8s9c4p2hmahd0t7_1758885239_img_1.webp"
+        ],
+        description: "Базовая модель шапки с плотной вязкой и комфортной посадкой."
+      },
+      "boots-001": {
+        title: "Winter boots",
+        price: 720, oldPrice: 980, sku: "boots-001",
+        images: [
+          "img/shop/assets_task_01k62wh0m5fzj9g3mjnwgj3cqh_1758886170_img_1.webp"
+        ],
+        description: "Зимние ботинки с нескользящей подошвой и утеплителем."
+      },
+      "boots-002": {
+        title: "Winter boots",
+        price: 700, oldPrice: 1000, sku: "boots-002",
+        images: [
+          "img/shop/assets_task_01k62wkbsyf2wtftvztpwb0vp9_1758886238_img_1.webp"
+        ],
+        description: "Лёгкие и тёплые ботинки для повседневной носки."
+      },
+      "jacket-001": {
+        title: "Winter jacket",
+        price: 720, oldPrice: 980, sku: "jacket-001",
+        images: [
+          "img/shop/assets_task_01k62wx6cgfbgsqffh60tw87ym_1758886623_img_0.webp",
+          "img/shop/assets_task_01k62wx6cgfbgsqffh60tw87ym_1758886623_img_1.webp"
+        ],
+        description: "Тёплая куртка с водоотталкивающей пропиткой и капюшоном."
+      },
+      "jacket-002": {
+        title: "Winter jacket",
+        price: 700, oldPrice: 1000, sku: "jacket-002",
+        images: [
+          "img/shop/assets_task_01k62wx6cgfbgsqffh60tw87ym_1758886623_img_1.webp"
+        ],
+        description: "Универсальная зимняя куртка с лёгким утеплителем."
+      },
+      "pants-001": {
+        title: "Winter pants",
+        price: 720, oldPrice: 980, sku: "pants-001",
+        images: [
+          "img/shop/assets_task_01k62x7gzhe8vbhby09zyrs7mt_1758886906_img_0.webp",
+          "img/shop/assets_task_01k62x7gzhe8vbhby09zyrs7mt_1758886906_img_1.webp"
+        ],
+        description: "Тёплые штаны с флисовой подкладкой."
+      },
+      "pants-002": {
+        title: "Winter pants",
+        price: 700, oldPrice: 1000, sku: "pants-002",
+        images: [
+          "img/shop/assets_task_01k62x7gzhe8vbhby09zyrs7mt_1758886906_img_1.webp"
+        ],
+        description: "Штаны для активного отдыха зимой."
+      }
+    };
+
+    // Вспомогалки
+    const fmtPrice = n => '₽' + Number(n).toLocaleString('ru-RU');
+
+    // Получаем id из URL
+    const id = new URLSearchParams(location.search).get('id');
+    const product = id && PRODUCTS[id];
+
+    if (!product) {
+      document.getElementById('not-found').hidden = false;
+    } else {
+      // Заголовки/цены
+      document.getElementById('page-title').textContent = product.title + ' — AI Shop';
+      document.getElementById('name').textContent = product.title;
+      document.getElementById('price').textContent = fmtPrice(product.price);
+      document.getElementById('oldPrice').textContent = product.oldPrice ? fmtPrice(product.oldPrice) : '';
+      document.getElementById('desc').textContent = product.description || '';
+      document.getElementById('sku').textContent = 'ID: ' + product.sku;
+
+      // Галерея
+      const hero = document.getElementById('hero');
+      hero.src = product.images[0];
+      hero.alt = product.title;
+
+      const thumbs = document.getElementById('thumbs');
+      product.images.forEach((src, i) => {
+        const t = document.createElement('img');
+        t.src = src;
+        t.alt = product.title + ' ' + (i + 1);
+        t.addEventListener('click', () => { hero.src = src; });
+        thumbs.appendChild(t);
+      });
+
+      document.getElementById('product').hidden = false;
+
+      // JSON-LD (SEO)
+      const ld = {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": product.title,
+        "image": product.images,
+        "sku": product.sku,
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "RUB",
+          "price": String(product.price),
+          "availability": "https://schema.org/InStock",
+          "url": location.href
+        }
+      };
+      const s = document.createElement('script');
+      s.type = 'application/ld+json';
+      s.textContent = JSON.stringify(ld);
+      document.head.appendChild(s);
+
+      // Кнопки (демо)
+      document.getElementById('buyBtn').addEventListener('click', () => {
+        alert('Покупка: ' + product.title + ' (' + product.sku + ')');
+      });
+      document.getElementById('addToCartBtn').addEventListener('click', () => {
+        alert('Добавлено в корзину: ' + product.title);
+      });
+    }
+  </script>
+</body>
+</html>
