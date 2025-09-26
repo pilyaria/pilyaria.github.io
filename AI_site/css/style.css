@@ -77,6 +77,30 @@ body {
   margin-left: 10px;
 }
 
+.features-wrap { margin: 12px 0 0; }
+.subhead { margin: 0 0 8px; font-size: 18px; }
+
+.features {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.features li {
+  position: relative;
+  padding-left: 28px;
+  margin: 8px 0;
+  line-height: 1.5;
+  color: #444;
+}
+.features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #2e8b57;     /* зелёная галочка */
+  font-weight: 700;
+}
+
 /* === CTA section === */
 .cta {
   text-align: center;
