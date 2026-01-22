@@ -27,7 +27,7 @@ This repository represents both my **professional profile** and my **practical w
 My up-to-date resume is available here:
 
 👉 **CV page:**  
-[https://pilyaria.github.io/CV/](https://pilyaria.github.io/c-v/index.html)
+[https://pilyaria.github.io/CV/](https://pilyaria.github.io/c-v/)
 
 Includes:
 - Professional experience  
