@@ -61,7 +61,7 @@ body {
 
 /* My project section*/
 .my-projects-section{
-    margin: 0 0 50px 0;
+    margin: 0 0 20px 0;
 }
 
 .my-projects-list{
@@ -299,10 +299,10 @@ body {
     transition: 0.3s;
   }
   .read-more-checker ~ .read-more-button:before {
-    content: "Развернуть »";
+    content: "read more »";
   }
   .read-more-checker:checked ~ .read-more-button:before {
-    content: "Свернуть «";
+    content: "collapse «";
   }
   .read-more-button {
     cursor: pointer;
@@ -313,20 +313,20 @@ body {
 
 
 .limited{
-    max-height: 400px;
+    max-height: 500px;
     overflow: hidden;
     position: relative;
 }
 
 .limited .bottom_lim{
-    position: absolute; /* Если прыгает - можно попробовать sticky */
+    position: sticky; /* Если прыгает - можно попробовать sticky или absolute*/
     bottom: 0;
     background: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0),
       rgb(255, 255, 255)90%);
     width: 100%;
-    height: 80px;
+    height: 10px;
     opacity: 1;
     transition: 0.3s;
 }
@@ -356,9 +356,9 @@ body {
 }
 
 .read-more-checker-exp ~ .read-more-button-exp::after {
-    content: "Развернуть »";
+    content: "read more »";
 }
 
 .read-more-checker-exp:checked ~ .read-more-button-exp::after {
-    content: "Свернуть «";
+    content: "collapse «";
 }
