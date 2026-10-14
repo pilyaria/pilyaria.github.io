@@ -33,7 +33,7 @@ Includes:
 - Professional experience  
 - Education  
 - Technical skills  
-- Projects and achievements  
+- Projects and achievements 
 
 ---
 
