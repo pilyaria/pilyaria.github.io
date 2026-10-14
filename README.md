@@ -27,7 +27,7 @@ This repository represents both my **professional profile** and my **practical w
 My up-to-date resume is available here:
 
 👉 **CV page:**  
-[https://pilyaria.github.io/CV/](https://pilyaria.github.io/c-v/)
+[https://pilyaria.github.io/CV/](https://pilyaria.github.io/CV/)
 
 Includes:
 - Professional experience  
@@ -103,8 +103,7 @@ Some of the technologies I work with:
 If you'd like to collaborate, discuss AI projects, or just connect:
 
 - GitHub: https://github.com/pilyaria  
-- LinkedIn: *(you can add it here)*  
-- Email: *(optional)*  
+- LinkedIn: https://www.linkedin.com/in/irina-piliar/
 
 ---
 
