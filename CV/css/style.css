@@ -67,11 +67,30 @@ body {
 .my-projects-list{
     font-weight: bold;
     padding: 0 0 0 17px;
+    margin: 0 0 10px 0;
+}
 
+.my-projects-category-title{
+    font-size: 15px;
+    line-height: 20px;
+    margin: 12px 0 4px 0;
+}
+
+.my-projects-archive{
+    margin-top: 12px;
+}
+
+.my-projects-archive-summary{
+    color: #595959;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 24px;
 }
 
 .my-projects-item{
     color: black;
+    margin-bottom: 4px;
 }
 
 .my-projects-text{
@@ -257,16 +276,26 @@ body {
     padding: 0 0 0 17px;
 }
 
+.skills-sublist{
+    margin: 0;
+    padding-left: 17px;
+}
+
 .skills-item{
     color: #FB6D3A;
 }
 
 .skills-item-text{
     font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px;
     color: #fff;
+}
+
+.skills-category-title{
+    font-weight: 700;
+    font-size: 16px;
 }
 
 /* Стили для текстового поля с кнопкой "Далее" */
